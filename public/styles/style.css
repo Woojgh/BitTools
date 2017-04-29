@@ -1,0 +1,83 @@
+body {
+  background-color: #131313;
+  font-family: 'Roboto';
+}
+
+.SocialA, .SocialB, .SocialC, .SocialD {
+  width: 200px;
+	margin: 0px;
+  position: relative;
+  overflow: hidden;
+  float: left;
+  opacity: 0;
+  animation: social 10s infinite;
+}
+
+.SocialA {
+  animation-delay: 0;
+}
+.SocialB {
+  animation-delay: 0.1s;
+}
+.SocialC {
+  animation-delay: 0.2s;
+}
+.SocialD {
+  animation-delay: 0.3s ;
+}
+
+.announcement {
+  color: #FFF;
+  font-size: 20px;
+  width: 1400px;
+  padding-top: 9px;
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  opacity: 0;
+  animation: announceslide 10s infinite;
+}
+
+@keyframes social {
+  0% {
+    transform: translate3d(0px,45px,0px);
+    opacity: 0;
+  }
+  10% {
+    transform: translate3d(0px,0px,0px);
+    opacity: 1;
+  }
+  30% {
+    transform: translate3d(0px,0px,0px);
+    opacity: 1;
+  }
+  40%, 100% {
+    transform: translate3d(0px,45px,0px);
+    opacity: 0;
+  }
+}
+
+@keyframes announceslide {
+  0%, 30% {
+    transform: translate3d(0px,45px,0px);
+    opacity: 0;
+  }
+  40% {
+    transform: translate3d(0px,45px,0px);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(0px,0px,0px);
+    opacity: 1;
+  }
+  
+  80% {
+    transform: translate3d(0px,0px,0px);
+    opacity: 1;
+  }
+  
+  90%, 100% {
+    transform: translate3d(0px,45px,0px);
+    opacity: 0;
+  }
+}
