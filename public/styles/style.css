@@ -1,0 +1,21 @@
+body {
+  background-color: blue;
+  font-family: 'Roboto';
+}
+
+#about {
+	display:none;
+}
+.fill-color {
+	display:none;
+}
+#widget-create {
+	display:none;
+}
+.widget-display {
+	background-color: #00FF01;
+	display: none;
+	float:right;
+	height:25vw;
+	width:40vw;
+}

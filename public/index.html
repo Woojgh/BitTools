@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">        
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <title>BitTools</title>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<header>
+			<section id="nav-bar">
+				
+			</section>
+		</header>
+		<main>
+			<section id ="login">
+				<div>
+					<img src="http://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
+				</div>
+			</section>
+			<section id="instructions">
+				
+			</section>
+			<section id="widget-create">
+				<div>
+					<h1>Setup Your Widget</h1>
+					<input type="text" name="widget_text"><input type="color" name="widget-color">
+					<input type="number" name="goal">
+					<input id="poll-choices" type="number" min="0" max="10" value="0">
+					<p>Bar fill Color?</p><input class="fill-checkbox" type="checkbox" name="fill-color"><input class="fill-color" type="color" name="barfillcolor">
+
+					<div id="choice-result"></div>
+					<button id="save-button">Save</button>
+					<button id="test-button">Test</button>
+					<button id="logout">Logout</button>
+				</div>
+			</section>
+			<section id="widget-display-test">
+				<div class="widget-display"></div>
+			</section>
+			<section id="about">
+
+			</section>
+		</main>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="//cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
+		<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+		<script src="scripts/login.js"></script>
+		<script src="scripts/controllers/aboutController.js"></script>
+		<script src="scripts/controllers/widgetController.js"></script>
+		<script src="scripts/controllers/instructionsController.js"></script>
+		<script src="scripts/widget.js"></script>
+		<script src="scripts/logout.js"></script>
+	</body>
+</html>
