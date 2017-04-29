@@ -6,6 +6,9 @@ body {
 #about {
 	display:none;
 }
+.fillcheckbox {
+	padding:1vw;
+}
 .fill-color {
 	display:none;
 }
