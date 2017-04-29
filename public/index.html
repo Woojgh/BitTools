@@ -6,6 +6,20 @@
 	  <title>BitTools</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<script type="text/javascript"></script>
+	
+		<script id="widget-template" type="text/x-handlebars-template">
+      <widget class="clearfix">
+        <header>
+          <h1>{{title}}</h1>
+          <div class="byline">
+            By <address><a href="{{widget-author-Url}}">{{author}}</a></address>
+          </div>
+        </header>
+        <section class="widget-body">{{{body}}}</section>
+      </widget>
+    </script>
+
+
 	</head>
 	<body>
 		<header>
@@ -20,21 +34,35 @@
 				</div>
 			</section>
 			<section id="instructions">
-				
 			</section>
-			<section id="widget-create">
-				<div>
+			      <section id="widgets" class="tab-content">
+      </section>
+			<section id="write" class="tab-content">
+			<form action="#" id="widget-form">
+				<label>
 					<h1>Setup Your Widget</h1>
-					<input type="text" name="widget_text"><input type="color" name="widget-color">
-					<input type="number" name="goal">
-					<input id="poll-choices" type="number" min="0" max="10" value="0">
-					<p>Bar fill Color?</p><input class="fill-checkbox" type="checkbox" name="fill-color"><input class="fill-color" type="color" name="barfillcolor">
-
-					<div id="choice-result"></div>
+					Widget Text<input id="widget-title" placeholder="Widget title" type="text" required>
+				</label>
+				<div>
+					Widget color<input type="color" name="widget-color">
+				</div>
+				<div>
+					Goal Amount<input type="number" name="goal" required>
+					<!-- <input class="fill-color" type="color" name="barfillcolor"> -->
+				</div>
+						
+				<div>
+					How many poll choices?<input id="poll-choices" type="number" min="0" max="10" value="0">
+				</div>
+				<div id="choice-result"></div>
+				<div>
+					Poll choice fill color?<input id="fillcheckboxall" type="checkbox">
+				</div>
 					<button id="save-button">Save</button>
 					<button id="test-button">Test</button>
 					<button id="logout">Logout</button>
 				</div>
+				</form>
 			</section>
 			<section id="widget-display-test">
 				<div class="widget-display"></div>
@@ -44,9 +72,11 @@
 			</section>
 		</main>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
 		<script src="//cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
 		<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
 		<script src="scripts/login.js"></script>
+		<script src="popups.js"></script>
 		<script src="scripts/controllers/aboutController.js"></script>
 		<script src="scripts/controllers/widgetController.js"></script>
 		<script src="scripts/controllers/instructionsController.js"></script>
