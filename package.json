@@ -1,0 +1,20 @@
+{
+  "name": "bittools",
+  "version": "1.0.0",
+  "description": "An overlay to encourage bit tipping for your web streaming.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Woojgh/BitTools.git"
+  },
+  "author": "James Feore Zachary Diehl Christina Thomas James Salamonsen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Woojgh/BitTools/issues"
+  },
+  "homepage": "https://github.com/Woojgh/BitTools#readme"
+}
