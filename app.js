@@ -9,16 +9,16 @@ var options = {
 		reconnect: true
 	},
 	identity: {
-		username:"woojgh",
-		password: "oauth:z87bh5uupjlzydic0n339fch9ek3f5"
+		username:"tooltest",
+		password: "oauth:dse0huqbr6wzz2j8wg5s2a3ehcfjsm"
 	},
 	channels: ["Woojgh"]
 }
 var client = new tmi.client(options);
 client.connect();
 
-client.on('chat', function(channel, user, message, self) {
-	client.action("Woojgh", user['display-name'] + "Noob testing" )
+client.on('cheer', function (channel, userstate, message) {
+	client.action("Woojgh", user['display-name'] + "Cheer thanks" )
 });
 // client.api({
 //     url: "https://api.twitch.tv/kraken/user",
