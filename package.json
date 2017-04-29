@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Woojgh/BitTools/issues"
   },
-  "homepage": "https://github.com/Woojgh/BitTools#readme"
+  "homepage": "https://github.com/Woojgh/BitTools#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "tmi.js": "^1.2.0"
+  }
 }
