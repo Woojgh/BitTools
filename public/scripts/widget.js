@@ -16,4 +16,4 @@ $('#fillcheckbox').on('click', function () {
 });
 $('#test-button').on('click', function (){
 	$('.widget-display').toggle();
-});
+}); 
