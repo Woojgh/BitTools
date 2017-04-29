@@ -79,35 +79,20 @@
     $('#article-json').on('focus', function() {
       $(this).select();
     });
-    $('#new-form').on('change', newWidget.create);
-    $('#new-form').on('submit', newWidget.submit);
+    $('#widget-form').on('change', newWidget.create);
+    $('#widget-form').on('submit', newWidget.submit);
   };
 
   newWidget.create = function() {
     $('#widget-display').empty();
-    let formArticle = new Widget({
+    let formWidget = new Widget({
       title: $('#widget-title').val(),
       author: $('#widget-author').val(),
       authorUrl: $('#widget-author-url').val(),
       body: $('#widget-body').val(),
     });
-    $('.widget-display').append(formArticle.toHtml('#widget-template'));
-    // $('pre code').each((i, block) => hljs.highlightBlock(block));
+    $('.widget-display').append(formWidget.toHtml('#widget-template'));
   };
-
-  // newWidget.submit = function(event) {
-  //   event.preventDefault();
-  //   let article = new Article({
-  //     title: $('#article-title').val(),
-  //     author: $('#article-author').val(),
-  //     authorUrl: $('#article-author-url').val(),
-  //     category: $('#article-category').val(),
-  //     body: $('#article-body').val(),
-  //     publishedOn: new Date().toISOString()
-  //   });
-
-  //   article.insertRecord();
-  // }
 
   newWidget.initnewWidgetPage();
 
@@ -119,10 +104,6 @@ function Widget(rawDataObj) {
 
   Widget.prototype.toHtml = function() {
     let template = Handlebars.compile($('#widget-template').text());
-
-    // this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
-    // this.publishStatus = this.publishedOn ? `published ${this.daysAgo} days ago` : '(draft)';
-    // this.body = marked(this.body);
 
     return template(this);
   };

@@ -12,7 +12,7 @@
         <header>
           <h1>{{title}}</h1>
           <div class="byline">
-            By <address><a href="{{widgetUrl}}">{{author}}</a></address>
+            By <address><a href="{{widget-author-Url}}">{{author}}</a></address>
           </div>
         </header>
         <section class="widget-body">{{{body}}}</section>
@@ -35,50 +35,34 @@
 			</section>
 			<section id="instructions">
 			</section>
+			      <section id="widgets" class="tab-content">
+      </section>
 			<section id="write" class="tab-content">
-        <h1>New Widget</h1>
-        <form action="#" id="new-form">
-          <label>
-            <input type="text" id="widget-title" placeholder="Widget title" required>
-          </label>
-          <textarea id="widget-body" rows="8" cols="40" required></textarea>
-          <label>
-            <input type="text" id="widget-author" placeholder="Author Name" required>
-          </label>
-          <label>
-            <input type="text" id="widget-widget-url" placeholder="Author's URL" required>
-          </label>
-          <label>
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-      <section id="widgets" class="tab-content">
-
-      </section>
-			<section id="widget-create">
-				<div>
+			<form action="#" id="widget-form">
+				<label>
 					<h1>Setup Your Widget</h1>
-					Widget Text<input type="text" name="widget_text">
-				</div>
+					Widget Text<input id="widget-title" placeholder="Widget title" type="text" required>
+				</label>
 				<div>
 					Widget color<input type="color" name="widget-color">
 				</div>
 				<div>
 					Goal Amount<input type="number" name="goal">
-					<input class="fill-color" type="color" name="barfillcolor">
-				</div>
-				<div>
-					Poll choice fill color?<input class="fill-checkbox" type="checkbox" name="fill-checkbox">
+					<!-- <input class="fill-color" type="color" name="barfillcolor"> -->
 				</div>
 						
 				<div>
 					How many poll choices?<input id="poll-choices" type="number" min="0" max="10" value="0">
 				</div>
-					<div id="choice-result"></div>
+				<div id="choice-result"></div>
+				<div>
+					Poll choice fill color?<input id="fillcheckbox" type="checkbox">
+				</div>
 					<button id="save-button">Save</button>
 					<button id="test-button">Test</button>
 					<button id="logout">Logout</button>
 				</div>
+				</form>
 			</section>
 			<section id="widget-display-test">
 				<div class="widget-display"></div>
