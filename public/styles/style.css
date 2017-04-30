@@ -15,13 +15,7 @@ body {
 #widget-create {
 	display:none;
 }
-#widget-display {
-	background-color: #00FF01;
-	display: none;
-	
-	height:75vw;
-	width:100vw;
-}
+
 td {
 	float:left;
 }
