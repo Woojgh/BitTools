@@ -1,12 +1,12 @@
 'use strict';
 (function(module) {
-	$('#widget-create').hide();
+	$('#widget-form').hide();
 	var twitchLogin = {};
 
 	Twitch.init({clientId: 'pxic46d4dsydwhxvlh341kb7dgdnc6'}, function(error, status) {
     if (status.authenticated) {
   $('.twitch-connect').hide();
-  $('#widget-create').show();
+  $('#widget-form').show();
 }
   		});
 
