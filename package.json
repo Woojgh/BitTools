@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Woojgh/BitTools#readme",
   "dependencies": {
     "express": "^4.15.2",
+    "pym.js": "^1.2.0",
     "tmi.js": "^1.2.0",
     "twitch-sdk": "^0.3.1"
   }
