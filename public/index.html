@@ -5,7 +5,8 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <title>BitTools</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
-		<script type="text/javascript"></script>
+		<link rel="stylesheet" href="http://cdn.dhtmlx.com/edge/dhtmlx.css" 
+    type="text/css"> 
 	
 		<script id="widget-template" type="text/x-handlebars-template">
       <widget class="clearfix">
@@ -35,16 +36,54 @@
 			</section>
 			<section id="instructions">
 			</section>
-			      <section id="widgets" class="tab-content">
-      </section>
+			<section id="widgets" class="tab-content"></section>
 			<section id="write" class="tab-content">
 			<form action="#" id="widget-form">
 				<label>
 					<h1>Setup Your Widget</h1>
 					Widget Text<input id="widget-title" placeholder="Widget title" type="text" required>
 				</label>
+				<section>
+				<table border=0 cellpadding=0 cellspacing=0 width=100%>
+	          <tr>
+	            <td>
+	              Font
+	            </td>
+	            <td>
+	              <select name=font id="fontchoice" >
+		              <option style="font-family:arial;" value="Arial" selected>Arial
+		              <option style="font-family:'comic sans ms';" value="Comic Sans MS">Comic Sans MS
+		              <option style="font-family:'courier new';" value="Courier New">Courier New
+		              <option style="font-family:'Georgia';" value="Georgia">Georgia
+		              <option style="font-family:'Lucida Console';" value="Lucida Console">Lucida Console
+		              <option style="font-family:'Palatino Linotype';" value="Palatino Linotype">Palatino Linotype
+		              <option style="font-family:tahoma;" value="Tahoma">Tahoma
+		              <option style="font-family:'times new roman';" value="Times New Roman">Times New Roman
+		              <option style="font-family:'trebuchet ms';" value="Trebuchet MS">Trebuchet MS
+		              <option style="font-family:verdana;" value="Verdana">Verdana
+	              </select>
+	            </td>
+	          </tr>
+	        </table>
+					<table border=0 cellpadding=0 cellspacing=0 width=100%>
+	          <tr>
+	            <td>
+	              Font Size
+	            </td>
+	            <td>
+	              <select name=fontsize id="fontsize" >
+		              <option value="1">Small
+		              <option value="2" selected>Normal
+		              <option value="3">Large
+		              <option value="4">X-Large
+		              <option value="5">XX-Large
+	              </select>
+	            </td>
+	          </tr>
+	        </table>
+				</section>
 				<div>
-					Widget color<input type="color" name="widget-color">
+					Poll color<input type="color" name="widget-color">
 				</div>
 				<div>
 					Goal Amount<input type="number" name="goal" required>
@@ -62,10 +101,12 @@
 					<button id="test-button">Test</button>
 					<button id="logout">Logout</button>
 				</div>
-				</form>
+			</form>
 			</section>
 			<section id="widget-display-test">
-				<div class="widget-display"></div>
+				<div id="widget-display">
+				</div>
+				<div id="container"></div>
 			</section>
 			<section id="about">
 
@@ -73,9 +114,15 @@
 		</main>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+
+
 		<script src="//cdn.tmijs.org/js/latest/1.x/tmi.min.js"></script>
 		<script src="https://ttv-api.s3.amazonaws.com/twitch.min.js"></script>
+<script src="http://cdn.dhtmlx.com/edge/dhtmlx.js" 
+    type="text/javascript"></script>
 		<script src="scripts/login.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jscolor/2.0.4/jscolor.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/pym/1.2.0/p.v1.m.js"></script>
 		<script src="popups.js"></script>
 		<script src="scripts/controllers/aboutController.js"></script>
 		<script src="scripts/controllers/widgetController.js"></script>
