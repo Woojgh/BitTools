@@ -71,39 +71,23 @@ app.post('/choices', (request, response) => {
   .catch(console.error);
 });
 
-app.put('/articles/:id', (request, response) => {
+app.delete('/choices/:username', (request, response) => {
   client.query(`
-    UPDATE authors
-    SET author=$1, "authorUrl"=$2
-    WHERE author_id=$3
-    `,
-    [request.body.author, request.body.authorUrl, request.body.author_id]
+    DELETE FROM choices
+    INNER JOIN users
+			ON choices.user_id=users.user_id
+		WHERE username = $1;`,
+    [request.params.username]
   )
-  .then(() => {
-    client.query(`
-      UPDATE articles
-      SET author_id=$1, title=$2, category=$3, "publishedOn"=$4, body=$5
-      WHERE article_id=$6
-      `,
-      [
-        request.body.author_id,
-        request.body.title,
-        request.body.category,
-        request.body.publishedOn,
-        request.body.body,
-        request.params.id
-      ]
-    )
-  })
-  .then(() => response.send('Update complete'))
+  .then(() => response.send('Delete complete'))
   .catch(console.error);
 });
 
 // #5 retrieve info from database
-app.get('/users/:username', (request, response) => {
+app.get('/choices/:username', (request, response) => {
   client.query(`
-    SELECT * FROM users
-    INNER JOIN choices
+    SELECT * FROM choices
+    INNER JOIN users
       ON choices.user_id=users.user_id
 		WHERE username = $1;`,
 		[request.params.username]
