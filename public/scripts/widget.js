@@ -30,44 +30,38 @@ $('#fillcheckboxall').on('click', function () {
 $('#test-button').on('click', function (e){
   e.preventDefault();
   $('#widget-display').toggle();
-}); 
+});
 
 var colorWell;
 var defaultColor = "#0000ff";
 
-window.addEventListener("load", startup, false);
-
-function startup() {
-  colorWell = document.querySelector(".fill-color");
-  colorWell.value = defaultColor;
-  colorWell.addEventListener("input", updateFirst, false);
-  colorWell.addEventListener("change", updateAll, false);
-  colorWell.select();
-}
-
-// $('#raidenbutton').on('click', function(event) {
-//   event.preventDefault();
-//   $('.raiden').hide();
-// });
-
+// window.addEventListener("load", startup, false);
+//
+// function startup() {
+//   colorWell = document.querySelector(".fill-color");
+//   colorWell.value = defaultColor;
+//   colorWell.addEventListener("input", updateFirst, false);
+//   colorWell.addEventListener("change", updateAll, false);
+//   colorWell.select();
+// }
 
 $(function(){
   $(".increment").click(function(){
     var count = parseInt($("~ .count", this).text());
-    
+
     if($(this).hasClass("up")) {
       var count = count + 1;
-      
+
        $("~ .count", this).text(count);
     } else {
       var count = count - 1;
-       $("~ .count", this).text(count);     
+       $("~ .count", this).text(count);
     }
-    
+
     $(this).parent().addClass("bump");
-    
+
     setTimeout(function(){
-      $(this).parent().removeClass("bump");    
+      $(this).parent().removeClass("bump");
     }, 400);
   });
 });
