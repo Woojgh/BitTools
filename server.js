@@ -1,27 +1,26 @@
+// #1 define constants and requirements
 const express = require('express');
 
 const app = express();
 
 const PORT = process.env.PORT || 31337;
 
-var resources = [
-    {
-        id: 1,
-        name: 'Foo'
-    }
-];
 app.use(express.static('./public'));
-
+// #2 set up the http requests
 app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
 });
 
 app.listen(PORT, function() {
-	console.log(PORT + 'This is prteter');
 	console.log(`My server is running on port: ${PORT}`);
 });
+// #3 create Database
 
+// #4 populate Database
 
+// #5 retrieve info from database
+
+// #6 populate options
 var tmi = require('tmi.js');
 
 var options = {
