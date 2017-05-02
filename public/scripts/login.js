@@ -24,14 +24,14 @@ $('.twitch-connect').click(function () {
   				var newValue = document.location.href.split("=")[1].split("&")[0];
           console.log(newValue);
   // // }
-  // $.ajax({
-  //      url: 'https://api.twitch.tv/kraken',
-  //      beforeSend: function(xhr) {
-  //           xhr.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json"),
-  //           xhr.setRequestHeader("Authorization", `OAuth ${newValue}`)
-  //      }, success: function(data){
-  //          console.log(data);
-  //          //process the JSON data etc
-  //      }
-// })
+  $.ajax({
+       url: 'https://api.twitch.tv/kraken',
+       beforeSend: function(xhr) {
+            xhr.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json"),
+            xhr.setRequestHeader("Authorization", `OAuth ${newValue}`)
+       }, success: function(data){
+           console.log(data);
+           //process the JSON data etc
+       }
+})
 }
