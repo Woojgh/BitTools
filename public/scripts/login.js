@@ -12,6 +12,7 @@
 
 	$('.twitch-connect').click(function () {
 	  Twitch.login({
+	  	redirect_uri: 'https://bittoolscod301.herokuapp.com',
 	    scope: ['user_read', 'channel_read']
 	  });
 	})	
