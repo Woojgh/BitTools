@@ -1,5 +1,5 @@
 'use strict';
-$('#widget-form').hide();
+// $('#widget-form').hide();
 // var host = document.location.href.split("//")[1].split("/")[0];
 
 // Twitch.init({clientId: 'pxic46d4dsydwhxvlh341kb7dgdnc6'}, function(error, status) {
