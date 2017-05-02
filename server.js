@@ -1,3 +1,4 @@
+'use strict';
 // #1 define constants and requirements
 const express = require('express');
 const pg = require('pg');
@@ -5,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 31337;
 
 const conString = process.env.DATABASE_URL;
-const client = new pg.Client(constring);
+const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
