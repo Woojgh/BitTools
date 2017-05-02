@@ -17,11 +17,11 @@ $('.twitch-connect').click(function () {
   // });
   window.location = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=pxic46d4dsydwhxvlh341kb7dgdnc6&redirect_uri=https://bittoolscod301.herokuapp.com&scope=user_read+channel_read'
   console.log(document.location.hash);
-    if (document.location.hash != "")
-  			{
+    // if (document.location.hash != "")
+  			// {
   				var newValue = document.location.hash.split("=")[1].split("&")[0];
           console.log(newValue);
-  }
+  // }
   $.ajax({
        url: 'https://api.twitch.tv/kraken',
        beforeSend: function(xhr) {
