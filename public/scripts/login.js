@@ -26,9 +26,14 @@ $('.twitch-connect').click(function () {
   // // }
   $.ajax({
        url: 'https://api.twitch.tv/kraken',
-       beforeSend: function(xhr) {
-            xhr.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json"),
-            xhr.setRequestHeader("Authorization", `OAuth ${newValue}`)
+       headers: {
+         Accept: "application/vnd.twitchtv.v5+json",
+         Authorization: `OAuth ${newValue}`,
+         "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
+       },
+      //  beforeSend: function(xhr) {
+      //       xhr.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json"),
+      //       xhr.setRequestHeader("Authorization", `OAuth ${newValue}`)
        }, success: function(data){
            console.log(data);
            //process the JSON data etc
