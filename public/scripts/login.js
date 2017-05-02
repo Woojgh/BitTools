@@ -21,22 +21,33 @@ $('.twitch-connect').click(function () {
   // console.log(document.location.hash);
     // if (document.location.hash != "")
   			// {
-  				var newValue = document.location.href.split("=")[1].split("&")[0];
-          console.log(newValue);
+	var newValue = document.location.href.split("=")[1].split("&")[0];
+  console.log(newValue);
   // // }
   $.ajax({
-       url: 'https://api.twitch.tv/kraken',
-       headers: {
-         Accept: "application/vnd.twitchtv.v5+json",
-         Authorization: `OAuth ${newValue}`,
-         "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
-       },
-      //  beforeSend: function(xhr) {
-      //       xhr.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json"),
-      //       xhr.setRequestHeader("Authorization", `OAuth ${newValue}`)
-        success: function(data){
-           console.log(data);
-           //process the JSON data etc
-       }
-})
+    url: "https://api.twitch.tv/kraken/oauth2/token",
+    method: "POST",
+    data: {
+      client_id: "pxic46d4dsydwhxvlh341kb7dgdnc6",
+      client_secret: "c5kugf7f8ugkahsbpryccq6cocitxr",
+      grant_type: "authorization_code",
+      redirect_uri: "https://bittoolscod301.herokuapp.com",
+      code: newValue
+    },
+    success: function(data) {
+      console.log(data);
+    }
+  })
+// $.ajax({
+//  url: 'https://api.twitch.tv/kraken',
+//  headers: {
+//    Accept: "application/vnd.twitchtv.v5+json",
+//    Authorization: `OAuth ${newValue}`,
+//    "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
+//  },
+//   success: function(data){
+//    console.log(data);
+//    //process the JSON data etc
+//  }
+// })
 }
