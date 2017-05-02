@@ -10,8 +10,8 @@
   $('#widget-form').show();
   if (document.location.hash != "")
 			{
-				setCookie({ name: "auth", newValue: document.location.hash.split("=")[1].split("&")[0], secure: !isDev });
-				setCookie({ name: "authchange", newValue: "true" });
+				({ name: "auth", newValue: document.location.hash.split("=")[1].split("&")[0], secure: !isDev });
+				({ name: "authchange", newValue: "true" });
 }
 })
 
