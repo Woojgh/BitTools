@@ -11,10 +11,11 @@ $('#widget-form').show();
 });
 
 $('.twitch-connect').click(function () {
-  Twitch.login({
-  	redirect_uri: 'https://bittoolscod301.herokuapp.com',
-    scope: ['user_read', 'channel_read']
-  });
+  // Twitch.login({
+  // 	redirect_uri: 'https://bittoolscod301.herokuapp.com',
+  //   scope: ['user_read', 'channel_read']
+  // });
+  window.location = 'https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=pxic46d4dsydwhxvlh341kb7dgdnc6&redirect_uri=https://bittoolscod301.herokuapp.com&scope=user_read+channel_read'
   console.log(document.location.hash);
     if (document.location.hash != "")
   			{
