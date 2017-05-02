@@ -35,19 +35,19 @@ $('.twitch-connect').click(function () {
       code: newValue
     },
     success: function(data) {
-      console.log(data);
+$.ajax({
+ url: 'https://api.twitch.tv/kraken',
+ headers: {
+   Accept: "application/vnd.twitchtv.v5+json",
+   Authorization: `OAuth ${data.access_token}`,
+   "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
+ },
+  success: function(data){
+   console.log(data);
+   //process the JSON data etc
+ }
+})
+
     }
   })
-// $.ajax({
-//  url: 'https://api.twitch.tv/kraken',
-//  headers: {
-//    Accept: "application/vnd.twitchtv.v5+json",
-//    Authorization: `OAuth ${newValue}`,
-//    "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
-//  },
-//   success: function(data){
-//    console.log(data);
-//    //process the JSON data etc
-//  }
-// })
 }
