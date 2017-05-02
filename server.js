@@ -14,36 +14,87 @@ app.get('/', function(request, response){
 app.listen(PORT, function() {
 	console.log(`My server is running on port: ${PORT}`);
 });
+
 // #3 create Database
+loadDB();
+
+function loadDB() {
+	client.query(`
+		CREATE TABLE IF NOT EXISTS
+		users (
+			user_id SERIAL PRIMARY KEY,
+			username VARCHAR(255) UNIQUE NOT NULL,
+			widget_text VARCHAR(1000) NOT NULL,
+			text_color VARCHAR(255) NOT NULL,
+			fill_color VARCHAR(255) NOT NULL,
+			goal INTEGER NOT NULL
+		);`
+	)
+	.catch(console.error);
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    choices (
+      choice_id SERIAL PRIMARY KEY,
+      user_id INTEGER NOT NULL REFERENCES users(user_id),
+      choice_text VARCHAR(255) NOT NULL,
+			choice_color VARCHAR(255) NOT NULL,
+			value INTEGER
+    );`
+  )
+  .catch(console.error);
+}
 
 // #4 populate Database
+app.post('/choices', (request, response) => {
+  client.query(
+    'INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING',
+    [request.body.username, request.body.widgetText, request.body.textColor, request.body.fillColor, request.body.goal]
+  )
+  .then(() => {
+    client.query(`
+      INSERT INTO
+      choices(user_id, choice_text, choice_color, value)
+      SELECT author_id, $1, $2, $3
+      FROM users
+      WHERE username=$4;
+      `,
+      [
+        request.body.choiceText,
+        request.body.choiceColor,
+        request.body.value,
+        request.body.username,
+      ]
+    )
+  })
+  .then(() => response.send('Insert complete'))
+  .catch(console.error);
+});
+
+app.delete('/choices/:username', (request, response) => {
+  client.query(`
+    DELETE FROM choices
+    INNER JOIN users
+			ON choices.user_id=users.user_id
+		WHERE username = $1;`,
+    [request.params.username]
+  )
+  .then(() => response.send('Delete complete'))
+  .catch(console.error);
+});
 
 // #5 retrieve info from database
+app.get('/choices/:username', (request, response) => {
+  client.query(`
+    SELECT * FROM choices
+    INNER JOIN users
+      ON choices.user_id=users.user_id
+		WHERE username = $1;`,
+		[request.params.username]
+  )
+  .then(result => response.send(result.rows))
+  .catch(console.error);
+});
 
 // #6 populate options
 var tmi = require('tmi.js');
-
-var options = {
-	options:{
-		debug: true
-	},
-	connection: {
-		cluster: "aws",
-		reconnect: true
-	},
-	identity: {
-		username:"tooltest",
-		password: "oauth:dse0huqbr6wzz2j8wg5s2a3ehcfjsm"
-	},
-	channels: ["Woojgh"]
-}
-var client = new tmi.client(options);
-client.connect();
-
-client.on('chat', function (channel, user, message, self) {
-	client.action("Woojgh", user['display-name'] + "Cheer thanks" )
-});
-
-// client.on('chat', function (channel, userstate, message) {
-// 	client.action("Woojgh", user['display-name'] + "Cheer thanks" )
-// });
