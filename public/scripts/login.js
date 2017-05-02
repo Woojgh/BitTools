@@ -34,7 +34,7 @@ $('.twitch-connect').click(function () {
       //  beforeSend: function(xhr) {
       //       xhr.setRequestHeader("Accept", "application/vnd.twitchtv.v5+json"),
       //       xhr.setRequestHeader("Authorization", `OAuth ${newValue}`)
-       }, success: function(data){
+        success: function(data){
            console.log(data);
            //process the JSON data etc
        }
