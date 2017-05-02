@@ -13,12 +13,11 @@ function addPreview(choices) {
   var result = document.querySelector('#container');
   result.innerHTML = ' ';
   for (var i = 0; i < parseInt(choices.value); i++) {
-    var wrapper = document.createElement("div");
+    var wrapper = document.createElement('div');
     wrapper.innerHTML = '<span>0</span> <a id="a' + i + '" href="#">Vote</a>';
     result.appendChild(wrapper);
   }
 };
-
 
 $('#poll-choices').on('change', function () {
   addInputs(this);
@@ -46,33 +45,41 @@ var defaultColor = "#0000ff";
 // }
 
 $(function(){
-  $(".increment").click(function(){
-    var count = parseInt($("~ .count", this).text());
+  $('.increment').click(function(){
+    var count = parseInt($('~ .count', this).text());
 
-    if($(this).hasClass("up")) {
+    if($(this).hasClass('up')) {
       var count = count + 1;
 
-       $("~ .count", this).text(count);
+      $('~ .count', this).text(count);
     } else {
       var count = count - 1;
-       $("~ .count", this).text(count);
+      $('~ .count', this).text(count);
     }
 
-    $(this).parent().addClass("bump");
+    $(this).parent().addClass('bump');
 
     setTimeout(function(){
-      $(this).parent().removeClass("bump");
+      $(this).parent().removeClass('bump');
     }, 400);
   });
 });
 
 $(document).ready(function() {
-    $("#choice-result div a").click(function() {
-        $(this).parent().animate({
-           width: '+=100px'
-        }, 500);
+  $('#choice-result div a').click(function() {
+    $(this).parent().animate({
+      width: '+=100px'
+    }, 500);
 
-        $(this).prev().html(parseInt($(this).prev().html()) + 1);
-        return false;
-    });
+    $(this).prev().html(parseInt($(this).prev().html()) + 1);
+    return false;
+  });
+});
+
+function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor, paramGoal, paramChoiceText, paramChoiceColor, paramValue) {
+  $.post('/choices, {name:paramName, widgetText:paramWidgetText, textColor:paramTextColor, fillColor:paramFillColor, goal:paramGoal, choiceText:paramChoiceText, choiceColor:paramChoiceColor, value:paramValue}');
+}
+
+$('#save-button').click(function() {
+
 });
