@@ -15,6 +15,6 @@
 	  	redirect_uri: 'https://bittoolscod301.herokuapp.com',
 	    scope: ['user_read', 'channel_read']
 	  });
-	})	
+	})
 	module.twitchLogin = twitchLogin;
 })(window);
