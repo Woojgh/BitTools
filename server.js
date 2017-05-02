@@ -2,6 +2,7 @@
 // #1 define constants and requirements
 const express = require('express');
 const pg = require('pg');
+const tmi = require('tmi.js');
 const app = express();
 const PORT = process.env.PORT || 31337;
 
@@ -100,6 +101,3 @@ app.get('/choices/:username', (request, response) => {
   .then(result => response.send(result.rows))
   .catch(console.error);
 });
-
-// #6 populate options
-var tmi = require('tmi.js');
