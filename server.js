@@ -18,7 +18,7 @@ app.use(express.static('./public'));
 
 // #2 set up the http requests
 app.get('/', function(request, response){
-	response.sendFile('public/index.html', {root: '.'});
+	response.sendFile('index.html', {root: '.'});
 });
 
 app.listen(PORT, function() {
