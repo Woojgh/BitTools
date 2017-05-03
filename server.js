@@ -1,6 +1,7 @@
 'use strict';
 // #1 define constants and requirements
 const express = require('express');
+const bodyParser = require('body-parser');
 const pg = require('pg');
 const tmi = require('tmi.js');
 const app = express();
@@ -11,7 +12,10 @@ const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
+
 // #2 set up the http requests
 app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
