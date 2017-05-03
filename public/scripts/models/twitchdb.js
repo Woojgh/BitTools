@@ -7,10 +7,10 @@ var options = {
     reconnect: true
   },
   identity: {
-    username:'tooltest',
-    password: 'oauth:dse0huqbr6wzz2j8wg5s2a3ehcfjsm'
+    username: userInfo.currentUser,
+    password: `oauth:${userInfo.OAuth}`
   },
-  channels: ['Woojgh']
+  channels: [userInfo.currentUser]
 };
 
 var twitchClient = new tmi.client(options);

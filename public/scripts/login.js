@@ -17,7 +17,7 @@ function checkLogin() {
     userInfo.OAuth = savedInfo.OAuth;
     userInfo.currentUser = savedInfo.currentUser;
     userInfo.userID = savedInfo.userID;
-
+    renderWidget();
   } else {
     $('#widget-form').hide();
     var newValue = document.location.href.split("=")[1].split("&")[0];
@@ -47,6 +47,7 @@ function checkLogin() {
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
             $('#login').hide();
             $('#widget-form').show();
+            renderWidget();
           }
         })
       }

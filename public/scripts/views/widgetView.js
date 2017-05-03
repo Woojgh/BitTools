@@ -1,5 +1,7 @@
 'use strict';
 
+function renderWidget();
+
 function addInputs(numChoices) {
   var result = $('#choice-result');
   result.innerHTML = '';
