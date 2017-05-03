@@ -7,10 +7,10 @@ var options = {
     reconnect: true,
     secure: true
   },
-  identity: {
-    username: userInfo.currentUser,
-    password: `oauth:${userInfo.OAuth}`
-  },
+  // identity: {
+  //   username: userInfo.currentUser,
+  //   password: `oauth:${userInfo.OAuth}`
+  // },
   channels: [`#${userInfo.currentUser}`]
 };
 
