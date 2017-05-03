@@ -73,19 +73,24 @@ function renderWidget() {
 $('#save-button').click(function(e) {
   e.preventDefault();
   console.log('You clicked SAVE');
-  deleteChoices();
-  var widgetText = $('#widget-title').val();
-  var textColor = $('#widget-color').val();
-  var fillColor = $('#fill-color').val();
-  var goal = $('#goal').val();
-  var totalChoices = $('.choice-wrapper');
+//  deleteChoices();
+  $.ajax({
+    url: `/choices/${userInfo.currentUser}`,
+    method: 'DELETE'
+  }).then(function() {
+    var widgetText = $('#widget-title').val();
+    var textColor = $('#widget-color').val();
+    var fillColor = $('#fill-color').val();
+    var goal = $('#goal').val();
+    var totalChoices = $('.choice-wrapper');
 
-  for (var a = 0; a < totalChoices.length; a++) {
-    var thisChoice = totalChoices.eq(a).find('.choice-input').val();
-    var thisColor = totalChoices.eq(a).find('.choice-color').val();
-    var thisVal = totalChoices.eq(a).find('.base-value').val();
-    insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
-  }
+    for (var a = 0; a < totalChoices.length; a++) {
+      var thisChoice = totalChoices.eq(a).find('.choice-input').val();
+      var thisColor = totalChoices.eq(a).find('.choice-color').val();
+      var thisVal = totalChoices.eq(a).find('.base-value').val();
+      insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
+    }
+  });
 });
 
 // Clear button: Clear all fields, and delete the choices from the database
