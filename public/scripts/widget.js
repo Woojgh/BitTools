@@ -11,6 +11,6 @@ function deleteChoices() {
   })
 }
 
-function getPageInfo() {
-  return $.get(`/choices/${userInfo.currentUser}`);
-}
+// function getPageInfo() {
+//   return $.get(`/choices/${userInfo.currentUser}`);
+// }

@@ -49,20 +49,19 @@ $('#poll-choices').on('change', function () {
 
 // Check to see if there are existing choices in the database, and draw the page appropriately if so
 function renderWidget() {
-  var userChoices = getPageInfo();
-  console.log(userChoices);
-  console.log(userChoices.length);
-  debugger;
-  var renderFunc = Handlebars.compile($('#form-template').html());
-  if (userChoices) {
-    var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
-    $('#widget-form').append(theForm);
-    modInputs(2, null);
-  } else {
-    var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
-    $('#widget-form').append(theForm);
-    userChoices.forEach(modInputs(1), this);
-  }
+  $.get(`/choices/${userInfo.currentUser}`, function (data) {
+    var userChoices = data;
+    var renderFunc = Handlebars.compile($('#form-template').html());
+    if (userChoices === 0) {
+      var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
+      $('#widget-form').append(theForm);
+      modInputs(2, null);
+    } else {
+      var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
+      $('#widget-form').append(theForm);
+      userChoices.forEach(modInputs(1), this);
+    }
+  });
 };
 
 // Save or update the database by deleting all the choices first, and then adding the new ones
