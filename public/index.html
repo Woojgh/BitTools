@@ -27,13 +27,20 @@
 				<input class="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
 			</div>
 		</script>
+		<script id="#profile-template" type=""
 	</head>
 
 	<body>
 		<header>
 			<section id="nav-bar">
-
-			</section>
+			    <i id="hamburger" class="fa fa-bars" aria-hidden="true"></i>
+			    <section id="header-3">
+			      <ul id="nav-list">
+			        <li id="home"><a href="#">Home</a></li>
+			        <li id="Instructions"><a href="#">Instructions</a></li>
+			        <li id="About"><a href="#">About</a></li>
+			      </ul>
+			    </section>
 		</header>
 		<main>
 			<section id ="login">
@@ -82,8 +89,8 @@
 		<script src="scripts/cookies.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/pym/1.2.0/p.v1.m.js"></script>
 		<!-- <script src="popups.js"></script> -->
-		<script src="scripts/views/widgetView.js"></script>
 		<script src="scripts/controllers/aboutController.js"></script>
+		<script src="scripts/views/widgetView.js"></script>
 		<script src="scripts/controllers/widgetController.js"></script>
 		<script src="scripts/controllers/instructionsController.js"></script>
 		<script src="scripts/logout.js"></script>
