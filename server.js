@@ -74,7 +74,7 @@ app.post('/choices', (request, response) => {
     )
   })
   .then(() => response.send('Insert complete'))
-  .catch(console.log(request.body));
+  .catch(console.error);
 });
 
 app.delete('/choices/:username', (request, response) => {
