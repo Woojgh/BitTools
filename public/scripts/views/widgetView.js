@@ -77,12 +77,12 @@ $('#save-button').click(function(e) {
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
   var goal = $('#goal').val();
-  var totalChoices = $('#choice-wrapper');
+  var totalChoices = $('.choice-wrapper');
 
   for (var a = 0; a < totalChoices.length; a++) {
-    var thisChoice = totalChoices.eq(a).find('#choice-input').val();
-    var thisColor = totalChoices.eq(a).find('#choice-color').val();
-    var thisVal = totalChoices.eq(a).find('#base-value').val();
+    var thisChoice = totalChoices.eq(a).find('.choice-input').val();
+    var thisColor = totalChoices.eq(a).find('.choice-color').val();
+    var thisVal = totalChoices.eq(a).find('.base-value').val();
     insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
     console.log(thisChoice);
   }
