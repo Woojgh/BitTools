@@ -60,7 +60,7 @@ function loadDB() {
 app.post('/choices', (request, response) => {
 	console.log(request.body);
   client.query(
-    `INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO
+    `INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT (username) DO
 		UPDATE SET
 		username = $1, widget_text = $2, text_color = $3, fill_color = $4, goal = $5;`,
     [request.body.username, request.body.widgetText, request.body.textColor, request.body.fillColor, request.body.goal]
