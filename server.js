@@ -25,6 +25,8 @@ app.get('/', function(request, response){
 var dynamicUser;
 app.get('/user=:username', function (request, response) {
 	dynamicUser = request.params.username;
+	console.log(dynamicUser);
+	console.log(request.params.username);
 	response.sendFile('userpage.html', {root: './public'})
 });
 
