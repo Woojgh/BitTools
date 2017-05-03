@@ -2,8 +2,7 @@
 
 function drawUserPage() {
   // GET all info for the userInfo
-  console.log(dynamicUser);
-  $.get(`/choices/${dynamicUser}`, function (data) {
+  $.get(`/choices/${app.locals.dynamicUser}`, function (data) {
     var toRender = data;
     console.log(toRender);
     var renderFunc = Handlebars.compile($('#widget-text-template').html());

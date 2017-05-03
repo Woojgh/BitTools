@@ -11,7 +11,7 @@ var options = {
   //   username: userInfo.currentUser,
   //   password: `oauth:${userInfo.OAuth}`
   // },
-  channels: [dynamicUser]
+  channels: [app.locals.dynamicUser]
 };
 
 var twitchClient = new tmi.client(options);

@@ -22,11 +22,14 @@ app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
 });
 
-var dynamicUser;
 app.get('/user=:username', function (request, response) {
-	dynamicUser = request.params.username;
-	console.log(dynamicUser);
-	console.log(request.params.username);
+	app.locals.dynamicUser = request.params.username;
+	console.log('THIS IS THE LOG: ' + app.locals.dynamicUser);
+	console.log(app.locals.dynamicUser);
+	console.log(app.locals.dynamicUser);
+	console.log(app.locals.dynamicUser);
+	console.log(app.locals.dynamicUser);
+	console.log(app.locals.dynamicUser);
 	response.sendFile('userpage.html', {root: './public'})
 });
 
