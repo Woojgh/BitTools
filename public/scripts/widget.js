@@ -13,7 +13,7 @@ function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor
   }
   console.log(theChoice);
   console.log(JSON.stringify(theChoice));
-  $.post('/choices', JSON.stringify(theChoice));
+  $.post('/choices', theChoice);
 }
 
 function deleteChoices() {
