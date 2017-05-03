@@ -1,7 +1,7 @@
 'use strict';
 
 function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor, paramGoal, paramChoiceText, paramChoiceColor, paramValue) {
-  $.post('/choices, {name:paramName, widgetText:paramWidgetText, textColor:paramTextColor, fillColor:paramFillColor, goal:paramGoal, choiceText:paramChoiceText, choiceColor:paramChoiceColor, value:paramValue}');
+  $.post('/choices', {name:paramName, widgetText:paramWidgetText, textColor:paramTextColor, fillColor:paramFillColor, goal:paramGoal, choiceText:paramChoiceText, choiceColor:paramChoiceColor, value:paramValue});
 }
 
 function deleteChoices() {

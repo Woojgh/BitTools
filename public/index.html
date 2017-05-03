@@ -5,12 +5,30 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <title>BitTools</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
+
 		<script id="choice-template" type="text/x-handlebars-template">
-			<input class="choice-input" type="text" placeholder="#choice' + i + '" required/>
-			<input class="choice-color" value="#00FF00" type="color">
-			<input class="base-value" type="number" required/>
+			<div class="choice-wrapper">
+				<input class="choice-input" type="text" placeholder="#choice" value="{{choiceText}}" required/>
+				<input class="choice-color" value="{{choiceColor}}" type="color">
+				<input class="base-value" type="number" value="{{baseVal}}" required/>
+			</div>
+		</script>
+
+		<script id="form-template" type="text/x-handlebars-template">
+			<h1>Setup Your Widget</h1>
+			<label>
+				Widget Text<input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required />
+			</label>
+			<div>
+				Poll color <input type="color" id="widget-color" value="{{textColor}}" />
+			</div>
+			<div>
+				Goal Amount<input type="number" id="goal" value="{{goal}}" required />
+				<input class="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
+			</div>
 		</script>
 	</head>
+
 	<body>
 		<header>
 			<section id="nav-bar">
@@ -25,57 +43,23 @@
 			</section>
 			<section id="instructions">
 			</section>
-			<section id="widgets" class="tab-content"></section>
+			<section id="widgets" class="tab-content">
+				<form action="#" id="widget-form">
+					<div>
+						How many poll choices?<input id="poll-choices" type="number" min="0" max="10" value="0">
+					</div>
+					<div id="choice-result"></div>
+					<div>
+						<button id="save-button">Save</button>
+						<button id="test-button">
+							<a href="#" onClick="window.open('test.html','pagename','resizable,height=260,width=370,screenX=1000,left=700,screenY=1000,top=350'); return false;">Test</a>
+							<noscript><a href="test.html" target="_blank">Test</a></noscript>
+						</button>
+						<button id="logout">Logout</button>
+					</div>
+				</form>
+			</section>
 			<section id="write" class="tab-content">
-			<form action="#" id="widget-form">
-				<label>
-					<h1>Setup Your Widget</h1>
-					Widget Text<input id="widget-title" placeholder="Widget title" type="text" required>
-				</label>
-				<!-- <section>
-				<table border=0 cellpadding=0 cellspacing=0 width=100%>
-	          <tr>
-	            <td>
-	              Font
-	            </td>
-	            <td>
-	              <select name=font id="fontchoice" >
-		              <option style="font-family:arial;" value="Arial" selected>Arial
-		              <option style="font-family:'comic sans ms';" value="Comic Sans MS">Comic Sans MS
-		              <option style="font-family:'courier new';" value="Courier New">Courier New
-		              <option style="font-family:'Georgia';" value="Georgia">Georgia
-		              <option style="font-family:'Lucida Console';" value="Lucida Console">Lucida Console
-		              <option style="font-family:'Palatino Linotype';" value="Palatino Linotype">Palatino Linotype
-		              <option style="font-family:tahoma;" value="Tahoma">Tahoma
-		              <option style="font-family:'times new roman';" value="Times New Roman">Times New Roman
-		              <option style="font-family:'trebuchet ms';" value="Trebuchet MS">Trebuchet MS
-		              <option style="font-family:verdana;" value="Verdana">Verdana
-	              </select>
-	            </td>
-	          </tr>
-	        </table>
-				</section> -->
-				<div>
-					Poll color<input type="color" id="widget-color">
-				</div>
-				<div>
-					Goal Amount<input type="number" id="goal" required>
-					<!-- <input class="fill-color" type="color" name="barfillcolor"> -->
-				</div>
-
-				<div>
-					How many poll choices?<input id="poll-choices" type="number" min="0" max="10" value="0">
-				</div>
-				<div id="choice-result"></div>
-				<div>
-					Poll choice fill color?<input id="fillcheckboxall" type="checkbox" /><input id="main-fill" type="color" value="#666666"/>
-				</div>
-				<div>
-					<button id="save-button">Save</button>
-					<button id="test-button">					<a href="#" onClick="window.open('test.html','pagename','resizable,height=260,width=370,screenX=1000,left=700,screenY=1000,top=350'); return false;">Test</a><noscript><a href="test.html" target="_blank">Test</a></noscript></button>
-					<button id="logout">Logout</button>
-				</div>
-			</form>
 			</section>
 			<section id="widget-display-test">
 				<div id="widget-display">

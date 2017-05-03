@@ -1,25 +1,27 @@
 'use strict';
 
-function modInputs(numChoices) {
-  var result = $('#choice-result');
+function modInputs(numChoices, oneChoice) {
+  var result = $('.choice-wrapper');
+  var renderFunc = Handlebars.compile($('#choice-template'));
   if (numChoices > result.length) {
     var toAdd = numChoices - result.length;
     for (var a = 0; a < toAdd; a++) {
-
+      if (!oneChoice) {
+        var choiceToAdd = renderFunc({choiceText: '#choice', choiceColor: '#666666', baseVal: 0});
+        $('#choice-result').append(choiceToAdd);
+      }
+      else {
+        var choiceToAdd = renderFunc({choiceText: oneChoice.choice_text, choiceColor: oneChoice.choice_color, baseVal: oneChoice.value});
+        $('#choice-result').append(choiceToAdd);
+      }
     }
-  } elseif (numChoices < result.length) {
+  } else if (numChoices < result.length) {
     var toRemove = result.length - numChoices;
     for (var a = 1; a <= toRemove; a++) {
       result.eq(result.length - a).remove();
     }
   }
-  // result.innerHTML = '';
-  // for (var i = 0; i < parseInt(numChoices); i++) {
-  //   var wrapper = document.createElement('div');
-  //   wrapper.innerHTML = '<input class="choice-input" type="text" placeholder="#choice' + i + '" required/> <input class="choice-color" value="#00FF00" type="color"> <input class="base-value" type="number" required/>';
-  //   result.appendChild(wrapper);
-  // }
-};
+}
 
 // function addPreview(choices) {
 //   var result = document.querySelector('#container');
@@ -47,12 +49,16 @@ $('#poll-choices').on('change', function () {
 
 // Check to see if there are existing choices in the database, and draw the page appropriately if so
 function renderWidget() {
-  var userChoices = $.get(`/choices/${userInfo.currentUser}`);
-  // If no rows are returned, then just draw a blank form
-  if (userChoices) {
-
-  } else {  // If there are rows, then draw those rows to the page first
-
+  var userChoices = getPageInfo();
+  var renderFunc = Handlebars.compile($('#form-template'));
+  if (!userChoices) {
+    var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
+    $('#widget-form').append(theForm);
+    modInputs(2, null);
+  } else {
+    var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
+    $('#widget-form').append(theForm);
+    userChoices.forEach(modInputs(1), this);
   }
 };
 
@@ -67,7 +73,7 @@ $('#save-button').click(function() {
   var choicesColor = $('.choice-color');
   var choicesVal = $('.base-value');
 
-  for (let a = 0; a < choicesText.length; a++) {
+  for (var a = 0; a < choicesText.length; a++) {
     var thisChoice = choicesText.eq(a);
     var thisColor = choicesColor.eq(a);
     var thisVal = choicesVal.eq(a);
@@ -76,8 +82,8 @@ $('#save-button').click(function() {
 });
 
 // Clear button: Clear all fields, and delete the choices from the database
-$('#clear-button').click(function() {
-  deleteChoices();
-  modInputs(0);
-  modInputs(2);
-});
+// $('#clear-button').click(function() {
+//   deleteChoices();
+//   modInputs(0, null);
+//   modInputs(2, null);
+// });

@@ -13,6 +13,7 @@ $('.twitch-connect').click(function () {
 function checkLogin() {
   if (localStorage.userInfo) {
     $('#login').hide();
+    $('#widget-form').show();
     var savedInfo = JSON.parse(localStorage.getItem('userInfo'));
     userInfo.OAuth = savedInfo.OAuth;
     userInfo.currentUser = savedInfo.currentUser;
@@ -41,7 +42,6 @@ function checkLogin() {
             "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
           },
           success: function(data){
-            console.log(data);
             userInfo.currentUser = data.token.user_name;
             userInfo.userID = data.token.user_id;
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
