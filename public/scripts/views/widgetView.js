@@ -48,37 +48,41 @@ $('#poll-choices').on('change', function () {
 // });
 
 // Check to see if there are existing choices in the database, and draw the page appropriately if so
+var userChoices;
+
 function renderWidget() {
   $.get(`/choices/${userInfo.currentUser}`, function (data) {
-    var userChoices = data;
+    userChoices = data;
     var renderFunc = Handlebars.compile($('#form-template').html());
+    console.log(userChoices);
     if (userChoices.length === 0) {
       var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
       $('#widget-form').prepend(theForm);
       modInputs(2, null);
+      $('#poll-choices').val(2);
     } else {
       var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
       $('#widget-form').prepend(theForm);
-      userChoices.forEach(modInputs(1), this);
+      userChoices.forEach(x => {modInputs(1, x)});
     }
   });
 };
 
 // Save or update the database by deleting all the choices first, and then adding the new ones
-$('#save-button').click(function() {
-  deleteChoices();
+$('#save-button').click(function(e) {
+  e.preventDefault();
+  console.log('You clicked SAVE');
+  if (userChoices.length > 0) deleteChoices();
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
   var goal = $('#goal').val();
-  var choicesText = $('.choice-input');
-  var choicesColor = $('.choice-color');
-  var choicesVal = $('.base-value');
+  var totalChoices = $('.choice-wrapper');
 
-  for (var a = 0; a < choicesText.length; a++) {
-    var thisChoice = choicesText.eq(a);
-    var thisColor = choicesColor.eq(a);
-    var thisVal = choicesVal.eq(a);
+  for (var a = 0; a < totalChoices.length; a++) {
+    var thisChoice = totalChoices.eq(a).find('.choice-input').val();
+    var thisColor = totalChoices.eq(a).find('.choice-color').val();
+    var thisVal = totalChoices.eq(a).find('.base-value').val();
     insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
   }
 });

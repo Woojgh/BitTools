@@ -1,6 +1,7 @@
 'use strict';
 // #1 define constants and requirements
 const express = require('express');
+const bodyParser = require('body-parser');
 const pg = require('pg');
 const tmi = require('tmi.js');
 const app = express();
@@ -11,7 +12,10 @@ const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('./public'));
+
 // #2 set up the http requests
 app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
@@ -53,6 +57,7 @@ function loadDB() {
 
 // #4 populate Database
 app.post('/choices', (request, response) => {
+	console.log(request.body);
   client.query(
     'INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING',
     [request.body.username, request.body.widgetText, request.body.textColor, request.body.fillColor, request.body.goal]
@@ -61,7 +66,7 @@ app.post('/choices', (request, response) => {
     client.query(`
       INSERT INTO
       choices(user_id, choice_text, choice_color, value)
-      SELECT author_id, $1, $2, $3
+      SELECT user_id, $1, $2, $3
       FROM users
       WHERE username=$4;
       `,
