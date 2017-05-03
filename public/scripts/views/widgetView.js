@@ -57,6 +57,7 @@ function renderWidget() {
       var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
       $('#widget-form').prepend(theForm);
       modInputs(2, null);
+      $('#poll-choices').val(2);
     } else {
       var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
       $('#widget-form').prepend(theForm);
@@ -67,20 +68,20 @@ function renderWidget() {
 
 // Save or update the database by deleting all the choices first, and then adding the new ones
 $('#save-button').click(function() {
+  console.log('You clicked me!');
   deleteChoices();
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
   var goal = $('#goal').val();
-  var choicesText = $('.choice-input');
-  var choicesColor = $('.choice-color');
-  var choicesVal = $('.base-value');
+  var totalChoices = $('#choice-wrapper');
 
-  for (var a = 0; a < choicesText.length; a++) {
-    var thisChoice = choicesText.eq(a);
-    var thisColor = choicesColor.eq(a);
-    var thisVal = choicesVal.eq(a);
+  for (var a = 0; a < totalChoices.length; a++) {
+    var thisChoice = totalChoices.eq(a).find('#choice-input').val();
+    var thisColor = totalChoices.eq(a).find('#choice-color').val();
+    var thisVal = totalChoices.eq(a).find('#base-value').val();
     insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
+    console.log(thisChoice);
   }
 });
 
