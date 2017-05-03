@@ -1,17 +1,17 @@
 'use strict';
 
-function modInputs(numChoices, oneChoice) {
+function modInputs(numChoices, allChoices) {
   var result = $('.choice-wrapper');
   var renderFunc = Handlebars.compile($('#choice-template').html());
   if (numChoices > result.length) {
     var toAdd = numChoices - result.length;
     for (var a = 0; a < toAdd; a++) {
-      if (!oneChoice) {
+      if (!allChoices) {
         var choiceToAdd = renderFunc({choiceText: '#choice', choiceColor: '#666666', baseVal: 0});
         $('#choice-result').append(choiceToAdd);
       }
       else {
-        var choiceToAdd = renderFunc({choiceText: oneChoice.choice_text, choiceColor: oneChoice.choice_color, baseVal: oneChoice.value});
+        var choiceToAdd = renderFunc({choiceText: oneChoice[a].choice_text, choiceColor: oneChoice[a].choice_color, baseVal: oneChoice[a].value});
         $('#choice-result').append(choiceToAdd);
       }
     }
@@ -63,7 +63,8 @@ function renderWidget() {
     } else {
       var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
       $('#widget-form').prepend(theForm);
-      userChoices.forEach(x => {modInputs(1, x)});
+      modInputs(userChoices.length, userChoices);
+      $('#poll-choices').val(userChoices.length);
     }
   });
 };
