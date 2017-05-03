@@ -2,7 +2,7 @@
 
 function modInputs(numChoices, oneChoice) {
   var result = $('.choice-wrapper');
-  var renderFunc = Handlebars.compile($('#choice-template'));
+  var renderFunc = Handlebars.compile($('#choice-template').html());
   if (numChoices > result.length) {
     var toAdd = numChoices - result.length;
     for (var a = 0; a < toAdd; a++) {
@@ -50,7 +50,7 @@ $('#poll-choices').on('change', function () {
 // Check to see if there are existing choices in the database, and draw the page appropriately if so
 function renderWidget() {
   var userChoices = getPageInfo();
-  var renderFunc = Handlebars.compile($('#form-template'));
+  var renderFunc = Handlebars.compile($('#form-template').html());
   if (!userChoices) {
     var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
     $('#widget-form').append(theForm);
