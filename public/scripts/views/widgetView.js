@@ -48,9 +48,11 @@ $('#poll-choices').on('change', function () {
 // });
 
 // Check to see if there are existing choices in the database, and draw the page appropriately if so
+var userChoices;
+
 function renderWidget() {
   $.get(`/choices/${userInfo.currentUser}`, function (data) {
-    var userChoices = data;
+    userChoices = data;
     var renderFunc = Handlebars.compile($('#form-template').html());
     console.log(userChoices);
     if (userChoices.length === 0) {
@@ -70,7 +72,7 @@ function renderWidget() {
 $('#save-button').click(function(e) {
   e.preventDefault();
   console.log('You clicked me!');
-  deleteChoices();
+  if (userChoices.length > 0) deleteChoices();
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
