@@ -71,7 +71,7 @@ function renderWidget() {
 // Save or update the database by deleting all the choices first, and then adding the new ones
 $('#save-button').click(function(e) {
   e.preventDefault();
-  console.log('You clicked me!');
+  console.log('You clicked SAVE');
   if (userChoices.length > 0) deleteChoices();
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();

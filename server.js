@@ -53,6 +53,7 @@ function loadDB() {
 
 // #4 populate Database
 app.post('/choices', (request, response) => {
+	console.log(request);
 	console.log(request.body);
   client.query(
     'INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING',
