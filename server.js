@@ -86,9 +86,9 @@ app.post('/choices', (request, response) => {
 app.delete('/choices/:username', (request, response) => {
   client.query(`
     DELETE FROM choices
-    INNER JOIN users
-			ON choices.user_id=users.user_id
-		WHERE username = $1;`,
+    WHERE choices.user_id =
+			(SELECT users.user_id FROM users
+			WHERE username = $1);`,
     [request.params.username]
   )
   .then(() => response.send('Delete complete'))
