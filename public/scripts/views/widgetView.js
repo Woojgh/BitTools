@@ -63,7 +63,7 @@ function renderWidget() {
     } else {
       var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
       $('#widget-form').prepend(theForm);
-      userChoices.forEach(modInputs(1), this);
+      userChoices.forEach(modInputs(1, this));
     }
   });
 };
