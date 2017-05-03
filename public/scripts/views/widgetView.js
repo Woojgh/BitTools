@@ -52,7 +52,8 @@ function renderWidget() {
   $.get(`/choices/${userInfo.currentUser}`, function (data) {
     var userChoices = data;
     var renderFunc = Handlebars.compile($('#form-template').html());
-    if (userChoices === 0) {
+    debugger;
+    if (userChoices.length === 0) {
       var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
       $('#widget-form').append(theForm);
       modInputs(2, null);
