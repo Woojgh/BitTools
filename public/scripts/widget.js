@@ -14,3 +14,8 @@ function deleteChoices() {
 // function getPageInfo() {
 //   return $.get(`/choices/${userInfo.currentUser}`);
 // }
+// Article.prototype.insertRecord = function(callback) {
+//   $.post('/articles', {author: this.author, authorUrl: this.authorUrl, body: this.body, category: this.category, publishedOn: this.publishedOn, title: this.title})
+//   .then(console.log)
+//   .then(callback);
+// };
