@@ -50,6 +50,7 @@ $('#poll-choices').on('change', function () {
 // Check to see if there are existing choices in the database, and draw the page appropriately if so
 function renderWidget() {
   var userChoices = getPageInfo();
+  console.log(userChoices);
   var renderFunc = Handlebars.compile($('#form-template').html());
   if (userChoices.length === 0) {
     var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
