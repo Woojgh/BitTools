@@ -11,7 +11,7 @@ var options = {
     username: userInfo.currentUser,
     password: `oauth:${userInfo.OAuth}`
   },
-  channels: [userInfo.currentUser]
+  channels: [`#${userInfo.currentUser}`]
 };
 
 var twitchClient = new tmi.client(options);
