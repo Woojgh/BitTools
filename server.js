@@ -98,6 +98,9 @@ app.get('/choices/:username', (request, response) => {
 		WHERE username = $1;`,
 		[request.params.username]
   )
-  .then(result => response.send(result.rows))
+  .then(result => {
+		console.log(result.rows);
+		response.send(result.rows);
+	})
   .catch(console.error);
 });
