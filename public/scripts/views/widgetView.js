@@ -1,6 +1,8 @@
 'use strict';
 
-function renderWidget();
+function renderWidget() {
+  console.log('You got here!');
+};
 
 function addInputs(numChoices) {
   var result = $('#choice-result');

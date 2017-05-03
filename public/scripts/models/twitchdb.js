@@ -4,7 +4,8 @@ var options = {
   },
   connection: {
     cluster: 'aws',
-    reconnect: true
+    reconnect: true,
+    secure: true
   },
   identity: {
     username: userInfo.currentUser,
