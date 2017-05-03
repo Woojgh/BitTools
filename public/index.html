@@ -5,21 +5,11 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <title>BitTools</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
-    <!-- type="text/css"> -->
-	<!--
-		<script id="widget-template" type="text/x-handlebars-template">
-      <widget class="clearfix">
-        <header>
-          <h1>{{title}}</h1>
-          <div class="byline">
-            By <address><a href="{{widget-author-Url}}">{{author}}</a></address>
-          </div>
-        </header>
-        <section class="widget-body">{{{body}}}</section>
-      </widget>
-    </script> -->
-
-
+		<script id="choice-template" type="text/x-handlebars-template">
+			<input class="choice-input" type="text" placeholder="#choice' + i + '" required/>
+			<input class="choice-color" value="#00FF00" type="color">
+			<input class="base-value" type="number" required/>
+		</script>
 	</head>
 	<body>
 		<header>
@@ -78,7 +68,7 @@
 				</div>
 				<div id="choice-result"></div>
 				<div>
-					Poll choice fill color?<input id="fillcheckboxall" type="checkbox" /><input id="main-fill" type="color" value="#666"/>
+					Poll choice fill color?<input id="fillcheckboxall" type="checkbox" /><input id="main-fill" type="color" value="#666666"/>
 				</div>
 				<div>
 					<button id="save-button">Save</button>

@@ -6,11 +6,11 @@ function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor
 
 function deleteChoices() {
   $.ajax({
-    url: `/choices/${currentUser}`,
+    url: `/choices/${userInfo.currentUser}`,
     method: 'DELETE'
   })
 }
 
 function getPageInfo() {
-  return $.get(`/choices/${currentUser}`);
+  return $.get(`/choices/${userInfo.currentUser}`);
 }
