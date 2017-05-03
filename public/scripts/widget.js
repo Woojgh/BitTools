@@ -11,6 +11,8 @@ function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor
     choiceColor:paramChoiceColor,
     value:paramValue
   }
+  console.log(theChoice);
+  console.log(JSON.stringify(theChoice));
   $.post('/choices', JSON.stringify(theChoice));
 }
 

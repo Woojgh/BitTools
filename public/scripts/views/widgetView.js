@@ -84,7 +84,6 @@ $('#save-button').click(function(e) {
     var thisColor = totalChoices.eq(a).find('.choice-color').val();
     var thisVal = totalChoices.eq(a).find('.base-value').val();
     insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
-    console.log(thisChoice);
   }
 });
 
