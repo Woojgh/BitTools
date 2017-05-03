@@ -2,7 +2,7 @@
 
 function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor, paramGoal, paramChoiceText, paramChoiceColor, paramValue) {
   var theChoice = {
-    name:paramName,
+    username:paramName,
     widgetText:paramWidgetText,
     textColor:paramTextColor,
     fillColor:paramFillColor,
