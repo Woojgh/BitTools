@@ -11,7 +11,7 @@ function modInputs(numChoices, allChoices) {
         $('#choice-result').append(choiceToAdd);
       }
       else {
-        var choiceToAdd = renderFunc({choiceText: oneChoice[a].choice_text, choiceColor: oneChoice[a].choice_color, baseVal: oneChoice[a].value});
+        var choiceToAdd = renderFunc({choiceText: allChoices[a].choice_text, choiceColor: allChoices[a].choice_color, baseVal: allChoices[a].value});
         $('#choice-result').append(choiceToAdd);
       }
     }
