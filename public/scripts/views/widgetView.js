@@ -73,7 +73,7 @@ function renderWidget() {
 $('#save-button').click(function(e) {
   e.preventDefault();
   console.log('You clicked SAVE');
-  if (userChoices.length > 0) deleteChoices();
+  deleteChoices();
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
