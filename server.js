@@ -67,7 +67,7 @@ app.post('/choices', (request, response) => {
     client.query(`
       INSERT INTO
       choices(user_id, choice_text, choice_color, value)
-      SELECT author_id, $1, $2, $3
+      SELECT user_id, $1, $2, $3
       FROM users
       WHERE username=$4;
       `,
