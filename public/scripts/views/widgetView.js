@@ -47,7 +47,6 @@ $('#poll-choices').on('change', function () {
 //   $('#widget-display').toggle();
 // });
 
-// Check to see if there are existing choices in the database, and draw the page appropriately if so
 var userChoices;
 
 function renderWidget() {
@@ -69,28 +68,10 @@ function renderWidget() {
   });
 };
 
-// Save or update the database by deleting all the choices first, and then adding the new ones
 $('#save-button').click(function(e) {
   e.preventDefault();
   console.log('You clicked SAVE');
   deleteChoices(insertRows);
-  // $.ajax({
-  //   url: `/choices/${userInfo.currentUser}`,
-  //   method: 'DELETE'
-  // }).then(function() {
-  //   var widgetText = $('#widget-title').val();
-  //   var textColor = $('#widget-color').val();
-  //   var fillColor = $('#fill-color').val();
-  //   var goal = $('#goal').val();
-  //   var totalChoices = $('.choice-wrapper');
-  //
-  //   for (var a = 0; a < totalChoices.length; a++) {
-  //     var thisChoice = totalChoices.eq(a).find('.choice-input').val();
-  //     var thisColor = totalChoices.eq(a).find('.choice-color').val();
-  //     var thisVal = totalChoices.eq(a).find('.base-value').val();
-  //     insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
-  //   }
-  // });
 });
 
 function insertRows() {

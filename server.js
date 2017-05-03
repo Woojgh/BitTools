@@ -22,6 +22,12 @@ app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
 });
 
+var dynamicUser;
+app.get('/user=:username', function (request, response) {
+	dynamicUser = request.params.username;
+	response.sendFile('userpage.html', {root: './public'})
+});
+
 app.listen(PORT, function() {
 	console.log(`My server is running on port: ${PORT}`);
 });
