@@ -18,9 +18,9 @@ function drawUserPage() {
       oneChoice.textColor = toRender[a].text_color;
       oneChoice.choiceColor = toRender[a].choice_color;
       oneChoice.choiceText = toRender[a].choice_text;
-      oneChoice.value = parseInt(toRender[a].goal) >= 100 ? Math.ceil(parseInt(toRender[a].value) / parseInt(toRender[a].goal) * 100) : Math.ceil(parseInt(toRender[a].value));
+      var totalValue = toRender.map(x => x.value).reduce((acc, x) => acc + parseInt(x));
+      oneChoice.value = Math.ceil(parseInt(toRender[a].value) / totalValue * 100);
       $('#show-choices').append(renderChoice(oneChoice));
-      console.log(oneChoice);
     }
   });
 }
@@ -29,7 +29,6 @@ twitchClient.on('cheer', function (channel, userstate, message) {
   for (var i = 0; i < toRender.length; i++) {
     if (message.includes(toRender[i].choice_text)) {
       var newVal = parseInt(toRender[i].value) + parseInt(userstate.bits);
-      console.log(newVal);
       updateChoice(newVal, i);
       $.ajax({
         url: `/choices/${dynamicUser}`,
@@ -46,7 +45,8 @@ twitchClient.on('cheer', function (channel, userstate, message) {
 
 function updateChoice(newVal, i) {
   toRender[i].value = newVal;
-  newVal = Math.ceil(parseInt(newVal) / parseInt(toRender[0].goal) * 100);
+  var totalValue = toRender.map(x => x.value).reduce((acc, x) => acc + parseInt(x));
+  newVal = Math.ceil(parseInt(newVal) / totalValue * 100);
   $('.single-choice').eq(i).find('span').css('width', `${newVal}%`);
   $('.single-choice').eq(i).css('border-color', toRender[i].choice_color);
   $('.single-choice').eq(i).animate({
