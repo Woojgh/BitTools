@@ -48,12 +48,13 @@ function updateChoice(newVal, index) {
   toRender[index].value = newVal;
   newVal = Math.ceil(parseInt(newVal) / parseInt(toRender[0].goal) * 100);
   $('.single-choice').eq(index).find('span').css('width', newVal);
+  $('.single-choice').eq(index).css('border-color', toRender[index].choice_color);
   $('.single-choice').eq(index).animate({
-      border: `3px solid red`
+      borderWidth: '3px'
      }, 200);
-  // .animate({
-    //   border: '0px'
-    // }, 200);
+    .animate({
+      border: '0px'
+    }, 200);
 };
 
 function linkFont (userfont) {
