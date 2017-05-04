@@ -5,7 +5,6 @@ $(document).ready(function() {
 });
 
 $('#aboutNav').on('click', function() {
-  console.log('hello');
   $('#about').show().siblings().hide();
   print();
 });
@@ -33,7 +32,6 @@ $.getJSON('/data/profiles.json', function(profiles) {
 });
 
 function print () {
-  console.log('hi');
   profileArray.forEach(function(data) {
     $('#about').append(data.toHtml());
   });
