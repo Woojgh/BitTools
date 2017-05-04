@@ -5,14 +5,14 @@
     <title>BitTools Browser Source</title>
     <link rel="stylesheet" type="text/css" href="styles/userpage.css">
     <script id="user-template" type="text/x-handlebars-template">
-      <li>
-        Value: {{baseVal}}, Choice Color: {{choiceColor}}, Text Color: {{textColor}}, Fill Color: {{fillColor}}, Goal: {{goal}}
-      </li>
+      <div class="single-choice" style="background-color: {{fillColor}}; color: {{textColor}};">
+        <span style="background-color: {{choiceColor}}; width: {{value}}%;"></span>
+      </div>
     </script>
     <script id="widget-text-template" type="text/x-handlebars-template">
-      <h1>{{widgetText}}</h1>
-      <ul id="hold-that-data">
-      </ul>
+      <div id="show-choices">
+        <h1 style="color: {{textColor}};">{{widgetText}}</h1>
+    </div>
     </script>
   </head>
   <body>

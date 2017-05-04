@@ -1,24 +1,24 @@
 'use strict';
 
+var toRender;
+
 function drawUserPage() {
-  // GET all info for the userInfo
   $.get(`/choices/${dynamicUser}`, function (data) {
-    var toRender = data;
+    toRender = data;
     console.log(toRender);
-    var renderFunc = Handlebars.compile($('#widget-text-template').html());
-    var theForm = renderFunc({widgetText: toRender[0].widget_text});
+    var renderHeader = Handlebars.compile($('#widget-text-template').html());
+    var renderChoice = Handlebars.compile($('#user-template').html());
+    var theForm = renderHeader({widgetText: toRender[0].widget_text, textColor: toRender[0].text_color});
     $('body').prepend(theForm);
-    // if (userChoices.length === 0) {
-    //   var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
-    //   $('#widget-form').prepend(theForm);
-    //   modInputs(2, null);
-    //   $('#poll-choices').val(2);
-    // } else {
-    //   var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
-    //   $('#widget-form').prepend(theForm);
-    //   modInputs(userChoices.length, userChoices);
-    //   $('#poll-choices').val(userChoices.length);
-    // }
+
+    for (var a = 0; a < toRender.length; a++) {
+      var oneChoice = {};
+      oneChoice.fillColor = toRender[a].fill_color;
+      oneChoice.textColor = toRender[a].text_color;
+      oneChoice.choiceColor = toRender[a].choice_color;
+      oneChoice.value = toRender[a].goal >= 100 ? (toRender[a].baseVal / toRender[a].goal * 100) : toRender[a].baseVal;
+      $('#show-choices').append(renderHeader(oneChoice));
+    }
   });
 }
 
