@@ -49,7 +49,7 @@ function updateChoice(newVal, i) {
   // newVal = Math.ceil(parseInt(newVal) / totalValue * 100);
   for(var a = 0; a < toRender.length; a++) {
     var reCalc = Math.ceil(parseInt(toRender[a].value) / totalValue * 100);
-    $('.single-choice').eq(i).find('span').css('width', `${reCalc}%`);
+    $('.single-choice').eq(a).find('span').css('width', `${reCalc}%`);
   };
   $('.single-choice').eq(i).css('border-color', toRender[i].choice_color);
   $('.single-choice').eq(i).animate({
