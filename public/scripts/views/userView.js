@@ -33,6 +33,7 @@ twitchClient.on('cheer', function (channel, userstate, message) {
   console.log('channel: ' + channel);
   console.log('message: ' + message);
   for (var i = 0; i < toRender.length; i++) {
+    console.log(toRender[i].choiceText);
     if (message.includes(toRender[i].choiceText)) {
       console.log('You found ' + toRender[i].choiceText);
       console.log('bits: ' + userstate.bits);
