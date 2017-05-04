@@ -17,7 +17,7 @@ function drawUserPage() {
       oneChoice.textColor = toRender[a].text_color;
       oneChoice.choiceColor = toRender[a].choice_color;
       oneChoice.choiceText = toRender[a].choice_text;
-      oneChoice.value = parseInt(toRender[a].goal) >= 100 ? (parseInt(toRender[a].value) / parseInt(toRender[a].goal) * 100) : parseInt(toRender[a].value);
+      oneChoice.value = parseInt(toRender[a].goal) >= 100 ? Math.ceil(parseInt(toRender[a].value) / parseInt(toRender[a].goal) * 100) : Math.ceil(parseInt(toRender[a].value));
       $('#show-choices').append(renderChoice(oneChoice));
       console.log(oneChoice);
     }
