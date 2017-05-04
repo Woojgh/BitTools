@@ -8,7 +8,6 @@ const tmi = require('tmi.js');
 const app = express();
 const PORT = process.env.PORT || 31337;
 
-// const conString = 'postgres://zdiehlio:chimaera1@localhost:31337/day3'
 const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
@@ -21,6 +20,10 @@ app.use(express.static('./public'));
 // #2 set up the http requests
 app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
+});
+
+app.get('/user=*', function (request, response) {
+	response.sendFile('userpage.html', {root: './public'})
 });
 
 app.listen(PORT, function() {
@@ -61,7 +64,9 @@ function loadDB() {
 app.post('/choices', (request, response) => {
 	console.log(request.body);
   client.query(
-    'INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT DO NOTHING',
+    `INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT (username) DO
+		UPDATE SET
+		username = $1, widget_text = $2, text_color = $3, fill_color = $4, goal = $5;`,
     [request.body.username, request.body.widgetText, request.body.textColor, request.body.fillColor, request.body.goal]
   )
   .then(() => {
@@ -87,11 +92,16 @@ app.post('/choices', (request, response) => {
 app.delete('/choices/:username', (request, response) => {
   client.query(`
     DELETE FROM choices
-    INNER JOIN users
-			ON choices.user_id=users.user_id
-		WHERE username = $1;`,
+    WHERE choices.user_id =
+			(SELECT users.user_id FROM users
+			WHERE username = $1);`,
     [request.params.username]
   )
+	// .then(`
+  //   DELETE FROM users
+	// 	WHERE username = $1;`,
+  //   [request.params.username]
+	// )
   .then(() => response.send('Delete complete'))
   .catch(console.error);
 });
