@@ -78,6 +78,11 @@ function insertRows() {
   }
 }
 
+$('#logout').click(function(e) {
+  e.preventDefault();
+  localStorage.clear();
+  checkLogin();
+});
 // Clear button: Clear all fields, and delete the choices from the database
 // $('#clear-button').click(function() {
 //   deleteChoices();
