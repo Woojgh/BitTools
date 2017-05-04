@@ -124,7 +124,8 @@ app.get('/choices/:username', (request, response) => {
     SELECT * FROM choices
     INNER JOIN users
       ON choices.user_id=users.user_id
-		WHERE username = $1;`,
+		WHERE username = $1
+		ORDER BY choice_id ASC;`,
 		[request.params.username]
   )
   .then(result => {
