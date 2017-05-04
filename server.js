@@ -1,14 +1,15 @@
 'use strict';
 // #1 define constants and requirements
 const express = require('express');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 const pg = require('pg');
 const tmi = require('tmi.js');
 const app = express();
 const PORT = process.env.PORT || 31337;
 
-const conString = 'postgres://postgres:postgres@localhost:5433/day3'
-// const conString = process.env.DATABASE_URL;
+// const conString = 'postgres://zdiehlio:chimaera1@localhost:31337/day3'
+const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
