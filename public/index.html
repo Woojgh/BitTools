@@ -23,11 +23,11 @@
 				Poll color <input type="color" id="widget-color" value="{{textColor}}" />
 			</div>
 			<div>
-				Goal Amount<input type="number" id="goal" value="{{goal}}" required />
+				Goal Amount<input type="number" id="goal" min="100" value="{{goal}}" required />
 				<input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
 			</div>
 		</script>
-    
+
 		<script id="profile-template" type="text/x-handlebars-template">
 			<img src="{{img}}">
 			<h1>{{name}}</h1>

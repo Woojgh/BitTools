@@ -45,7 +45,7 @@ twitchClient.on('cheer', function (channel, userstate, message) {
         }
       })
       .then(drawUserPage);
+      break;
     }
-    break;
   }
 });
