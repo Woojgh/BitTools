@@ -17,6 +17,7 @@ function drawUserPage() {
       oneChoice.textColor = toRender[a].text_color;
       oneChoice.choiceColor = toRender[a].choice_color;
       oneChoice.value = toRender[a].goal >= 100 ? (toRender[a].baseVal / toRender[a].goal * 100) : toRender[a].baseVal;
+      console.log(oneChoice);
       $('#show-choices').append(renderHeader(oneChoice));
     }
   });
