@@ -47,8 +47,10 @@ twitchClient.on('cheer', function (channel, userstate, message) {
 function linkFont (userfont) {
   var linkElement = document.createElement('link');
   linkElement.rel = 'stylesheet';
+  userfont = userfont.replace(/\s+/g, '+');
+  console.log(userfont);
   linkElement.href = `https://fonts.googleapis.com/css?family=${userfont}`;
   console.log(linkElement.href);
   document.head.appendChild(linkElement);
-  $('body').css(`font-family: ${userfont}, sans-serif`);
+  $('body').css(`font-family: '${userfont}', sans-serif`);
 };
