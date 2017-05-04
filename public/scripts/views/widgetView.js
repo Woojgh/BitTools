@@ -84,7 +84,8 @@ $('#logout').click(function(e) {
   checkLogin();
 });
 
-$('#clear-all').click(function() {
+$('#clear-all').click(function(e) {
+  e.preventDefault();
   var widgetText = $('#widget-title').val('');
   var textColor = $('#widget-color').val('#000000');
   var fillColor = $('#fill-color').val('#666666');
