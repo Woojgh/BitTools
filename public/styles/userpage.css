@@ -27,6 +27,7 @@ h1 {
 .single-choice span {
   border-radius: 5px;
   display: block;
+  margin: 0px;
   height: 100%;
   line-height: 20px;
 }
