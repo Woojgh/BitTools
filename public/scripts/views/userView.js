@@ -4,6 +4,7 @@ var toRender;
 
 function drawUserPage() {
   $.get(`/choices/${dynamicUser}`, function (data) {
+    $('#show-choices').remove();
     toRender = data;
     console.log(toRender);
     var renderHeader = Handlebars.compile($('#widget-text-template').html());

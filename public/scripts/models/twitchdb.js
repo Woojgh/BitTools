@@ -13,16 +13,15 @@ var options = {
   //   username: userInfo.currentUser,
   //   password: `oauth:${userInfo.OAuth}`
   // },
-  channels: [dynamicUser]
+  channels: ['swift_sh0t']
+  // channels: [dynamicUser]
 };
 
 var twitchClient = new tmi.client(options);
 twitchClient.connect();
 
-// twitchClient.on('chat', function (channel, user, message, self) {
-//   twitchClient.action('Woojgh', user['display-name'] + 'Cheer thanks');
-// });
-
-// client.on('chat', function (channel, userstate, message) {
-// 	client.action("Woojgh", user['display-name'] + "Cheer thanks" )
-// });
+twitchClient.on('cheer', function (channel, userstate, message) {
+  console.log('channel: ' + channel);
+  console.log('userstate: ' + userstate);
+  console.log('message: ' + message);
+});
