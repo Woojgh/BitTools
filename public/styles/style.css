@@ -5,74 +5,46 @@
 body {
   background-color: #fff;
   font-family: 'Roboto';
+  /*body {
+  margin: 0;
+  padding: 0;
+  }*/
 }
 
 #about {
 	display:none;
 }
 
+/*instructions section styles*/
+
 #instructions {
   display: none;
+  border-left: 5px solid rgba(155,190,90,0.8);
+  bor
+  position: absolute;
+  align-content: center;
+  margin: 20%;
+  padding: 40px;
 }
 
-.fillcheckbox {
-	padding:1vw;
-}
+/*end instructions styles*/
 
 #widget-form {
-	display:none;
+  display:none;
 }
 
-td {
-	float:left;
-}
-
-#container {
-  color: #fff;
-}
-#container #question {
-  display: block;
-  padding: 20px;
-  font-weight: bold;
-  letter-spacing: -3px;
-  margin-bottom: 20px;
-  padding: 10px;
-  font-size: 40px;
-}
-#container div {
-  font-weight: bold;
-  letter-spacing: -3px;
-  background: #0099cc;
-  margin-bottom: 15px;
-  padding: 10px;
-  font-size: 34px;
-  color: #ffffff;
-  border-left: 20px solid #333;
-  width: 400px;
-  -webkit-border-radius: 0.5em;
-  -moz-border-radius: 0 0.5em 0.5em 0;
-  border-radius: 0 1.5em 1.5em 0;
-}
-#container div a {
-  border-radius: 0.3em;
-  text-decoration: none;
-  color: #0099cc;
-  padding: 5px 15px;
-  background: #333;
-  margin: 0 20px;
-}
-#container div a:hover {
-  color: #fff;
-}
-body {
-  margin: 0;
-  padding: 0;
+button {
+  cursor: pointer;
 }
 
 /*nav-bar styles*/
-
+/*@media all and(min-width: 500px) {
+  #nav-list {
+    display: none;
+  }
+}*/
 .overlay {
-  height: 50%;
+  height: 15%;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -85,42 +57,29 @@ body {
 }
 
 .nav-list {
-  position: relative;
-  top: 25%;
+  position: absolute;
   width: 100%;
-  text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
+  text-align: left;
+}
+
+#home, #instructionsNav, #aboutNav {
+  display: inline-block;
 }
 
 .overlay a {
-  padding: 8px;
+  padding-right: 10px;
   text-decoration: none;
-  font-size: 36px;
-  color: #818181;
+  color: white;
   display: block;
   transition: 0.3s;
 }
 
-.overlay a:hover, .overlay a:focus {
-    color: #f1f1f1;
-}
-
-.overlay .closeNavList {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-}
-
-/*@media screen and (max-height: 450px) {
-    .overlay a {font-size: 20px}
-    .overlay .closeNavList {
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
+/*@media all and (max-width: 500px) {
+  #nav-list {
+    display: none;
+  }
 }*/
-
 
 /*end nav-bar styles*/
 
@@ -128,7 +87,3 @@ body {
 #login {
   display: none;
 }
-
-/*#login {
-margin: 50px;
-}*/

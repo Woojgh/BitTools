@@ -1,6 +1,6 @@
 'use strict';
 
-$('#hamburgerOpen').on('click', function() {
+$('#hamburger').on('click', function() {
   $('#nav-bar').width('100%');
 });
 
