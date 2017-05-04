@@ -44,12 +44,12 @@ twitchClient.on('cheer', function (channel, userstate, message) {
   }
 });
 
-function updateChoice(newVal, index) {
-  toRender[index].value = newVal;
+function updateChoice(newVal, i) {
+  toRender[i].value = newVal;
   newVal = Math.ceil(parseInt(newVal) / parseInt(toRender[0].goal) * 100);
-  $('.single-choice').eq(index).find('span').css('width', newVal);
-  $('.single-choice').eq(2).css('border-color', toRender[2].choice_color);
-  $('.single-choice').eq(2).animate({
+  $('.single-choice').eq(i).find('span').css('width', newVal);
+  $('.single-choice').eq(i).css('border-color', toRender[i].choice_color);
+  $('.single-choice').eq(i).animate({
       borderWidth: '3px'
      }, 200)
     .animate({
