@@ -42,11 +42,11 @@ function renderWidget() {
     var renderFunc = Handlebars.compile($('#form-template').html());
     console.log(userChoices);
     if (userChoices.length === 0) {
-      var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 100, fillColor: '#666666'});
+      var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 500, fillColor: '#666666'});
       $('#widget-form').prepend(theForm);
       modInputs(2, null);
       $('#poll-choices').val(2);
-      $('#goal').val(100);
+      $('#goal').val(500);
     } else {
       var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
       $('#widget-form').prepend(theForm);
