@@ -34,7 +34,7 @@ twitchClient.on('cheer', function (channel, userstate, message) {
   console.log('message: ' + message);
   for (var i = 0; i < toRender.length; i++) {
     if (message.includes(toRender[i].choice_text)) {
-      var newVal = toRender[i].value + userstate.bits;
+      var newVal = toRender[i].value + parseInt(userstate.bits);
       console.log(newVal);
       $.ajax({
         url: `/choices/${dynamicUser}`,
