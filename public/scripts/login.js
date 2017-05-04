@@ -1,6 +1,6 @@
 'use strict';
 
-var userInfo= {
+var userInfo = {
   OAuth: '',
   currentUser: '',
   userID: ''
@@ -14,6 +14,7 @@ function checkLogin() {
   if (localStorage.userInfo) {
     $('#login').hide();
     $('#widget-form').show();
+    $('#nav-bar').show();
     var savedInfo = JSON.parse(localStorage.getItem('userInfo'));
     userInfo.OAuth = savedInfo.OAuth;
     userInfo.currentUser = savedInfo.currentUser;
@@ -21,6 +22,7 @@ function checkLogin() {
     renderWidget();
   } else {
     $('#widget-form').hide();
+    $('#login').show();
     var newValue = document.location.href.split("=")[1].split("&")[0];
     $.ajax({
       url: "https://api.twitch.tv/kraken/oauth2/token",
@@ -47,6 +49,7 @@ function checkLogin() {
             localStorage.setItem('userInfo', JSON.stringify(userInfo));
             $('#login').hide();
             $('#widget-form').show();
+            $('#nav-bar').show();
             renderWidget();
           }
         })

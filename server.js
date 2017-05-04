@@ -9,6 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 31337;
 
 const conString = process.env.DATABASE_URL;
+// const conString = 'postgres://zdiehlio:chimaera1@localhost:31337/day3'
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -42,7 +43,8 @@ function loadDB() {
 			widget_text VARCHAR(1000) NOT NULL,
 			text_color VARCHAR(255) NOT NULL,
 			fill_color VARCHAR(255) NOT NULL,
-			goal INTEGER NOT NULL
+			goal INTEGER NOT NULL,
+      google_font VARCHAR(255) NOT NULL
 		);`
 	)
 	.catch(console.error);
@@ -58,16 +60,16 @@ function loadDB() {
     );`
   )
   .catch(console.error);
-}
+};
 
 // #4 populate Database
 app.post('/choices', (request, response) => {
 	console.log(request.body);
   client.query(
-    `INSERT INTO users(username, widget_text, text_color, fill_color, goal) VALUES($1, $2, $3, $4, $5) ON CONFLICT (username) DO
+    `INSERT INTO users(username, widget_text, text_color, fill_color, goal, google_font) VALUES($1, $2, $3, $4, $5, $6) ON CONFLICT (username) DO
 		UPDATE SET
-		username = $1, widget_text = $2, text_color = $3, fill_color = $4, goal = $5;`,
-    [request.body.username, request.body.widgetText, request.body.textColor, request.body.fillColor, request.body.goal]
+		username = $1, widget_text = $2, text_color = $3, fill_color = $4, goal = $5, google_font = $6;`,
+    [request.body.username, request.body.widgetText, request.body.textColor, request.body.fillColor, request.body.goal, request.body.googleFont]
   )
   .then(() => {
     client.query(`
@@ -97,11 +99,6 @@ app.delete('/choices/:username', (request, response) => {
 			WHERE username = $1);`,
     [request.params.username]
   )
-	// .then(`
-  //   DELETE FROM users
-	// 	WHERE username = $1;`,
-  //   [request.params.username]
-	// )
   .then(() => response.send('Delete complete'))
   .catch(console.error);
 });
