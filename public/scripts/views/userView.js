@@ -45,7 +45,7 @@ twitchClient.on('cheer', function (channel, userstate, message) {
 });
 
 function updateChoice(newVal, index) {
-  toRender[i].value = newVal;
+  toRender[index].value = newVal;
   newVal = Math.ceil(parseInt(newVal) / parseInt(toRender[0].goal) * 100);
   var theChoice = $('.single-choice').eq(index).find('span').css('width', newVal);
 };
