@@ -22,5 +22,17 @@ h1 {
 .single-choice span {
   height: 100%;
   line-height: 20px;
-  padding: 5px;
+}
+
+.mid-text {
+  position: absolute;
+  width: 240px;
+  max-width: 240px;
+  line-height: 20px;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+  top: 0px;
+  font-weight: bold;
+  text-align: center;
 }
