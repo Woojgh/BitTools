@@ -57,7 +57,7 @@ function renderWidget() {
   });
 };
 
-$('#save-button').click(function(e) {
+$('#save-all').click(function(e) {
   e.preventDefault();
   console.log('You clicked SAVE');
   deleteChoices(insertRows);
@@ -83,9 +83,17 @@ $('#logout').click(function(e) {
   localStorage.clear();
   checkLogin();
 });
-// Clear button: Clear all fields, and delete the choices from the database
-// $('#clear-button').click(function() {
-//   deleteChoices();
-//   modInputs(0, null);
-//   modInputs(2, null);
-// });
+
+$('#clear-all').click(function() {
+  var widgetText = $('#widget-title').val('');
+  var textColor = $('#widget-color').val('#000000');
+  var fillColor = $('#fill-color').val('#666666');
+  var goal = $('#goal').val(500);
+  var totalChoices = $('.choice-wrapper');
+
+  for (var a = 0; a < totalChoices.length; a++) {
+    var thisChoice = totalChoices.eq(a).find('.choice-input').val('');
+    var thisColor = totalChoices.eq(a).find('.choice-color').val('#666666');
+    var thisVal = totalChoices.eq(a).find('.base-value').val(0);
+  }
+});
