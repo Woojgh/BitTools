@@ -49,7 +49,7 @@ function updateChoice(newVal, index) {
   newVal = Math.ceil(parseInt(newVal) / parseInt(toRender[0].goal) * 100);
   $('.single-choice').eq(index).find('span').css('width', newVal);
   $('.single-choice').eq(index).animate({
-      border: `3px red`
+      border: `3px solid red`
      }, 200);
   // .animate({
     //   border: '0px'
