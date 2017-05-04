@@ -6,11 +6,11 @@ function drawUserPage() {
   $.get(`/choices/${dynamicUser}`, function (data) {
     $('#show-choices').remove();
     toRender = data;
+    linkFont(toRender[0].google_font);
     var renderHeader = Handlebars.compile($('#widget-text-template').html());
     var renderChoice = Handlebars.compile($('#user-template').html());
     var theForm = renderHeader({widgetText: toRender[0].widget_text, textColor: toRender[0].text_color});
     $('body').prepend(theForm);
-    linkFont(toRender[0].google_font);
 
     for (var a = 0; a < toRender.length; a++) {
       var oneChoice = {};
