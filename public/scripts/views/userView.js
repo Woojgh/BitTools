@@ -53,7 +53,7 @@ function updateChoice(newVal, index) {
       borderWidth: '3px'
      }, 200)
     .animate({
-      border: '0px'
+      borderWidth: '0px'
     }, 200);
 };
 
