@@ -48,6 +48,7 @@ function linkFont (userfont) {
   var linkElement = document.createElement('link');
   linkElement.rel = 'stylesheet';
   linkElement.href = `https://fonts.googleapis.com/css?family=${userfont}`;
+  console.log(linkElement.href);
   document.head.appendChild(linkElement);
   $('body').css(`font-family: ${userfont}, sans-serif`);
 };

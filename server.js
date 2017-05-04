@@ -59,7 +59,7 @@ function loadDB() {
     );`
   )
   .catch(console.error);
-}
+};
 
 // #4 populate Database
 app.post('/choices', (request, response) => {
@@ -98,11 +98,6 @@ app.delete('/choices/:username', (request, response) => {
 			WHERE username = $1);`,
     [request.params.username]
   )
-	// .then(`
-  //   DELETE FROM users
-	// 	WHERE username = $1;`,
-  //   [request.params.username]
-	// )
   .then(() => response.send('Delete complete'))
   .catch(console.error);
 });
