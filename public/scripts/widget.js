@@ -9,7 +9,7 @@ function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor
     goal:paramGoal,
     choiceText:paramChoiceText,
     choiceColor:paramChoiceColor,
-    value:paramValue
+    value:paramValue,
     googleFont:paramFont
   }
   $.post('/choices', theChoice);
