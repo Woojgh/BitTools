@@ -46,8 +46,11 @@ twitchClient.on('cheer', function (channel, userstate, message) {
 function updateChoice(newVal, i) {
   toRender[i].value = newVal;
   var totalValue = toRender.map(x => x.value).reduce((acc, x) => acc + parseInt(x));
-  newVal = Math.ceil(parseInt(newVal) / totalValue * 100);
-  $('.single-choice').eq(i).find('span').css('width', `${newVal}%`);
+  // newVal = Math.ceil(parseInt(newVal) / totalValue * 100);
+  for(var a = 0; a < toRender.length; a++) {
+    var reCalc = Math.ceil(parseInt(toRender[a].value) / totalValue * 100);
+    $('.single-choice').eq(i).find('span').css('width', `${reCalc}%`);
+  };
   $('.single-choice').eq(i).css('border-color', toRender[i].choice_color);
   $('.single-choice').eq(i).animate({
       borderWidth: '3px'
