@@ -28,3 +28,17 @@ function drawUserPage() {
 // set up Cheer listeners
   // on Cheer, update the database
   // then draw the page again
+
+twitchClient.on('cheer', function (channel, userstate, message) {
+  console.log('channel: ' + channel);
+  console.log('message: ' + message);
+  for (var i = 0; i < toRender.length; i++) {
+    if (message.includes(toRender[a].choiceText)) {
+      console.log('You found ' + toRender[a].choiceText);
+      console.log('bits: ' + userstate.bits);
+    }
+    else {
+      console.log('Nope');
+    }
+  }
+});
