@@ -1,16 +1,12 @@
 'use strict';
 
-(function(module) {
-  const aboutController = {};
+$(document).ready(function() {
+  $('#about').hide();
+});
 
-  aboutController.index = () => {
-    $('#about').show().siblings().hide();
-
-  };
-
-  module.aboutController = aboutController;
-})(window);
-
+$('#aboutNav').on('click', function() {
+  $('#about').show().siblings().hide();
+});
 
 //about json
 var profileArray = [];
@@ -23,21 +19,26 @@ function Profile (profilesDataObj) {
 }
 
 Profile.prototype.toHtml = function() {
-  var theTemplate = $('#profileTemplate').html();
-  var renderProfiles = Handlebars.compile(theTemplate);
-  return theTemplate(this);
+  // var theTemplate = $('#profile-template').html();
+  var renderProfiles = Handlebars.compile($('#profile-template').text());
+  console.log(renderProfiles(this));
+  return renderProfiles(this);
 };
 
-$.getJSON('profiles.json', function(profiles) {
+$.getJSON('/data/profiles.json', function(profiles) {
   profiles.forEach(function(profilesDataObject) {
     var profiles = new Profile(profilesDataObject);
-    $('#about').append(profiles.toHtml());
+    profileArray.push(profiles);
   });
 });
 
-profileArray.forEach(function(profile) {
-  $('#profile').append(profile.toHtml());
-})
+function print () {
+profileArray.forEach(function(data) {
+  $('#about').append(data.toHtml());
+});
+}
+print();
+
 // .fetchAll = function() {
 //   if(localStorage.portfolioData) {
 //     Portfolio.loadAll(JSON.parse(localStorage.portfolioData));

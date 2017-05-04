@@ -27,6 +27,13 @@
 				<input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
 			</div>
 		</script>
+    
+		<script id="profile-template" type="text/x-handlebars-template">
+			<img src="{{img}}">
+			<h1>{{name}}</h1>
+			<p>{{bio}}</p>
+			<p href="{{url}}">GITHUB</p>
+		</script>
 	</head>
 
 	<body>
@@ -36,8 +43,8 @@
 			    <section id="header-3">
 			      <ul id="nav-list">
 			        <li id="home"><a href="#">Home</a></li>
-			        <li id="Instructions"><a href="#">Instructions</a></li>
-			        <li id="About"><a href="#">About</a></li>
+			        <li id="instructionsNav"><a href="#instructions">Instructions</a></li>
+			        <li id="aboutNav"><a href="#about">About</a></li>
 			      </ul>
 			    </section>
 		</header>
@@ -46,8 +53,6 @@
 				<div>
 					<img src="https://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
 				</div>
-			</section>
-			<section id="instructions">
 			</section>
 			<section id="widgets" class="tab-content">
 				<form action="#" id="widget-form">
@@ -71,6 +76,9 @@
 				<div id="widget-display">
 				</div>
 				<div id="container"></div>
+			</section>
+			<section id="instructions">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</section>
 			<section id="about">
 

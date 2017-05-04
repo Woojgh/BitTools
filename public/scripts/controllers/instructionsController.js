@@ -1,12 +1,8 @@
 'use strict';
 
-(function(module) {
-  const instructionsController = {};
-
-  instructionsController.index = () => {
-    $('#instructions').show().siblings().hide();
-    
-  };
-
-  module.instructionsController = instructionsController;
-})(window);
+$(document).ready(function() {
+  $('#instructions').hide();
+});
+$('#instructionsNav').on('click', function() {
+  $('#instructions').show().siblings().hide();
+});
