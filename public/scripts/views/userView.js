@@ -51,7 +51,7 @@ function updateChoice(newVal, index) {
   $('.single-choice').eq(index).css('border-color', toRender[index].choice_color);
   $('.single-choice').eq(index).animate({
       borderWidth: '3px'
-     }, 200);
+     }, 200)
     .animate({
       border: '0px'
     }, 200);
