@@ -67,7 +67,7 @@ function insertRows() {
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
-  var goal = 500;
+  var goal = '500';
   var totalChoices = $('.choice-wrapper');
   var userFont = $('#google-font').val();
 
