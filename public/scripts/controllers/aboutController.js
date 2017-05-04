@@ -6,6 +6,7 @@ $(document).ready(function() {
 
 $('#aboutNav').on('click', function() {
   $('#about').show().siblings().hide();
+  print();
 });
 
 //about json
@@ -19,9 +20,7 @@ function Profile (profilesDataObj) {
 }
 
 Profile.prototype.toHtml = function() {
-  // var theTemplate = $('#profile-template').html();
   var renderProfiles = Handlebars.compile($('#profile-template').text());
-  console.log(renderProfiles(this));
   return renderProfiles(this);
 };
 
@@ -33,19 +32,7 @@ $.getJSON('/data/profiles.json', function(profiles) {
 });
 
 function print () {
-profileArray.forEach(function(data) {
-  $('#about').append(data.toHtml());
-});
+  profileArray.forEach(function(data) {
+    $('#about').append(data.toHtml());
+  });
 }
-print();
-
-// .fetchAll = function() {
-//   if(localStorage.portfolioData) {
-//     Portfolio.loadAll(JSON.parse(localStorage.portfolioData));
-//   }else{
-//     $.getJSON('/data/dataSource.json').then(function(portfolioDataObj){
-//       Portfolio.loadAll(portfolioDataObj);
-//       console.log(portfolioDataObj);
-//     });
-//   }
-// };
