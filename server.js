@@ -106,7 +106,19 @@ app.delete('/choices/:username', (request, response) => {
   .catch(console.error);
 });
 
-// #5 retrieve info from database
+app.put('/choices/:username', (request, response) => {
+  client.query(`
+    UPDATE choices
+    SET value=$1
+    WHERE choice_text = $2 AND choices.user_id =
+			(SELECT users.user_id from users WHERE username = $3)
+    `,
+    [request.body.value, request.body.choiceText, request.params.username]
+  )
+  .then(() => response.send('Update complete'))
+  .catch(console.error);
+});
+
 app.get('/choices/:username', (request, response) => {
   client.query(`
     SELECT * FROM choices

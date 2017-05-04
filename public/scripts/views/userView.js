@@ -33,13 +33,19 @@ twitchClient.on('cheer', function (channel, userstate, message) {
   console.log('channel: ' + channel);
   console.log('message: ' + message);
   for (var i = 0; i < toRender.length; i++) {
-    console.log(toRender[i].choice_text);
     if (message.includes(toRender[i].choice_text)) {
-      console.log('You found ' + toRender[i].choice_text);
-      console.log('bits: ' + userstate.bits);
+      var newVal = toRender[i].value + userstate.bits;
+      console.log(newVal);
+      $.ajax({
+        url: `/choices/${dynamicUser}`,
+        method: 'PUT',
+        data: {
+          value: newVal,
+          choiceText: toRender[i].choice_text
+        }
+      })
+      .then(drawUserPage);
     }
-    else {
-      console.log('Nope');
-    }
+    break;
   }
 });
