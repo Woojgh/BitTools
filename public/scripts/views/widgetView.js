@@ -23,29 +23,16 @@ function modInputs(numChoices, allChoices) {
   }
 }
 
-// function addPreview(choices) {
-//   var result = document.querySelector('#container');
-//   result.innerHTML = ' ';
-//   for (var i = 0; i < parseInt(choices.value); i++) {
-//     var wrapper = document.createElement('div');
-//     wrapper.innerHTML = '<span>0</span> <a id="a' + i + '" href="#">Vote</a>';
-//     result.appendChild(wrapper);
-//   }
-// };
 
 $('#poll-choices').on('change', function () {
   modInputs(this.value);
-  // addPreview(this);
 });
 
-// $('#fillcheckboxall').on('click', function () {
-//   $('.fill-color').toggle();
-// });
-
-// $('#test-button').on('click', function (e){
-//   e.preventDefault();
-//   $('#widget-display').toggle();
-// });
+$('#test-button').on('click', function (e){
+  e.preventDefault();
+  window.open(`https://bittoolscod301.herokuapp.com/user=${userInfo.currentUser}`,'pagename','resizable,height=260,width=370,screenX=1000,left=700,screenY=1000,top=350'); 
+  return false;
+});
 
 var userChoices;
 
@@ -66,6 +53,7 @@ function renderWidget() {
       modInputs(userChoices.length, userChoices);
       $('#poll-choices').val(userChoices.length);
     }
+    $('#browser-source').val(`https://bittoolscod301.herokuapp.com/user=${userInfo.currentUser}`);
   });
 };
 
