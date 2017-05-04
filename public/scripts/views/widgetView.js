@@ -67,7 +67,7 @@ function insertRows() {
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
-  // var goal = $('#goal').val();
+  var goal = 500;
   var totalChoices = $('.choice-wrapper');
   var userFont = $('#google-font').val();
 
@@ -75,7 +75,7 @@ function insertRows() {
     var thisChoice = totalChoices.eq(a).find('.choice-input').val();
     var thisColor = totalChoices.eq(a).find('.choice-color').val();
     var thisVal = totalChoices.eq(a).find('.base-value').val();
-    insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, thisChoice, thisColor, thisVal, userFont);
+    insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal, userFont);
   }
 }
 
