@@ -1,6 +1,6 @@
 'use strict';
 
-function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor, paramGoal, paramChoiceText, paramChoiceColor, paramValue) {
+function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor, paramGoal, paramChoiceText, paramChoiceColor, paramValue, paramFont) {
   var theChoice = {
     username:paramName,
     widgetText:paramWidgetText,
@@ -10,6 +10,7 @@ function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor
     choiceText:paramChoiceText,
     choiceColor:paramChoiceColor,
     value:paramValue
+    googleFont:paramFont
   }
   $.post('/choices', theChoice);
 }

@@ -7,7 +7,7 @@ function modInputs(numChoices, allChoices) {
     var toAdd = numChoices - result.length;
     for (var a = 0; a < toAdd; a++) {
       if (!allChoices) {
-        var choiceToAdd = renderFunc({choiceText: '#choice', choiceColor: '#666666', baseVal: 0});
+        var choiceToAdd = renderFunc({choiceText: '#choice', choiceColor: '#ffffff', baseVal: 0});
         $('#choice-result').append(choiceToAdd);
       }
       else {
@@ -42,13 +42,13 @@ function renderWidget() {
     var renderFunc = Handlebars.compile($('#form-template').html());
     console.log(userChoices);
     if (userChoices.length === 0) {
-      var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 500, fillColor: '#666666'});
+      var theForm = renderFunc({widgetText: '', textColor: '#000000', goal: 500, fillColor: '#666666', googleFont: 'Baloo'});
       $('#widget-form').prepend(theForm);
       modInputs(2, null);
       $('#poll-choices').val(2);
       $('#goal').val(500);
     } else {
-      var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
+      var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color, googleFont: userChoices[0].google_font});
       $('#widget-form').prepend(theForm);
       modInputs(userChoices.length, userChoices);
       $('#poll-choices').val(userChoices.length);
@@ -69,12 +69,13 @@ function insertRows() {
   var fillColor = $('#fill-color').val();
   var goal = $('#goal').val();
   var totalChoices = $('.choice-wrapper');
+  var userFont = $('#google-font').val();
 
   for (var a = 0; a < totalChoices.length; a++) {
     var thisChoice = totalChoices.eq(a).find('.choice-input').val();
     var thisColor = totalChoices.eq(a).find('.choice-color').val();
     var thisVal = totalChoices.eq(a).find('.base-value').val();
-    insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
+    insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal, userFont);
   }
 }
 
@@ -86,15 +87,16 @@ $('#logout').click(function(e) {
 
 $('#clear-all').click(function(e) {
   e.preventDefault();
-  var widgetText = $('#widget-title').val('');
-  var textColor = $('#widget-color').val('#000000');
-  var fillColor = $('#fill-color').val('#666666');
-  var goal = $('#goal').val(500);
+  $('#widget-title').val('');
+  $('#widget-color').val('#000000');
+  $('#fill-color').val('#666666');
+  $('#goal').val(500);
+  $('#google-font').val('Baloo');
   var totalChoices = $('.choice-wrapper');
 
   for (var a = 0; a < totalChoices.length; a++) {
-    var thisChoice = totalChoices.eq(a).find('.choice-input').val('');
-    var thisColor = totalChoices.eq(a).find('.choice-color').val('#666666');
-    var thisVal = totalChoices.eq(a).find('.base-value').val(0);
+    totalChoices.eq(a).find('.choice-input').val('');
+    totalChoices.eq(a).find('.choice-color').val('#ffffff');
+    totalChoices.eq(a).find('.base-value').val(0);
   }
 });

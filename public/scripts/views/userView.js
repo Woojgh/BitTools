@@ -6,11 +6,11 @@ function drawUserPage() {
   $.get(`/choices/${dynamicUser}`, function (data) {
     $('#show-choices').remove();
     toRender = data;
-    console.log(toRender);
     var renderHeader = Handlebars.compile($('#widget-text-template').html());
     var renderChoice = Handlebars.compile($('#user-template').html());
     var theForm = renderHeader({widgetText: toRender[0].widget_text, textColor: toRender[0].text_color});
     $('body').prepend(theForm);
+    linkFont(toRender[0].google_font);
 
     for (var a = 0; a < toRender.length; a++) {
       var oneChoice = {};
@@ -43,3 +43,11 @@ twitchClient.on('cheer', function (channel, userstate, message) {
     }
   }
 });
+
+function linkFont (userfont) {
+  var linkElement = document.createElement('link');
+  linkElement.rel = 'stylesheet';
+  linkElement.href = `https://fonts.googleapis.com/css?family=${userfont}`;
+  document.head.appendChild(linkElement);
+  $('body').css(`font-family: ${userfont}, sans-serif`);
+};
