@@ -7,32 +7,34 @@ body {
 }
 
 h1 {
-  font-weight: bold;
   font-size: 16px;
+  font-weight: bold;
   margin-bottom: 10px;
   text-align: center;
 }
 
 .single-choice {
-  width: 100%;
+  border-radius: 5px;
   height: 20px;
   margin-bottom: 10px;
   position: relative;
+  width: 100%;
 }
 
 .single-choice span {
+  border-radius: 5px;
+  display: block;
   height: 100%;
   line-height: 20px;
-  display: block;
 }
 
 .mid-text {
-  position: absolute;
-  width: 240px;
-  max-width: 240px;
-  line-height: 20px;
-  left: 10px;
-  top: 0px;
-  font-weight: bold;
   font-size: 12px;
+  font-weight: bold;
+  left: 10px;
+  line-height: 20px;
+  max-width: 240px;
+  position: absolute;
+  top: 0px;
+  width: 240px;
 }
