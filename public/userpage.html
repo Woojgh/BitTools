@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" href="styles/userpage.css">
     <script id="user-template" type="text/x-handlebars-template">
       <div class="single-choice" style="background-color: {{fillColor}}; color: {{textColor}};">
-        <span style="background-color: {{choiceColor}}; width: {{value}}%;"></span>
+        <span style="background-color: {{choiceColor}}; width: {{value}}%;">{{choiceText}}</span>
       </div>
     </script>
-    
+
     <script id="widget-text-template" type="text/x-handlebars-template">
       <div id="show-choices">
         <h1 style="color: {{textColor}};">{{widgetText}}</h1>
