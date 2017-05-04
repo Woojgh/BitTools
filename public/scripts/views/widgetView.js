@@ -1,17 +1,17 @@
 'use strict';
 
-function modInputs(numChoices, oneChoice) {
+function modInputs(numChoices, allChoices) {
   var result = $('.choice-wrapper');
   var renderFunc = Handlebars.compile($('#choice-template').html());
   if (numChoices > result.length) {
     var toAdd = numChoices - result.length;
     for (var a = 0; a < toAdd; a++) {
-      if (!oneChoice) {
+      if (!allChoices) {
         var choiceToAdd = renderFunc({choiceText: '#choice', choiceColor: '#666666', baseVal: 0});
         $('#choice-result').append(choiceToAdd);
       }
       else {
-        var choiceToAdd = renderFunc({choiceText: oneChoice.choice_text, choiceColor: oneChoice.choice_color, baseVal: oneChoice.value});
+        var choiceToAdd = renderFunc({choiceText: allChoices[a].choice_text, choiceColor: allChoices[a].choice_color, baseVal: allChoices[a].value});
         $('#choice-result').append(choiceToAdd);
       }
     }
@@ -47,7 +47,6 @@ $('#poll-choices').on('change', function () {
 //   $('#widget-display').toggle();
 // });
 
-// Check to see if there are existing choices in the database, and draw the page appropriately if so
 var userChoices;
 
 function renderWidget() {
@@ -63,16 +62,19 @@ function renderWidget() {
     } else {
       var theForm = renderFunc({widgetText: userChoices[0].widget_text, textColor: userChoices[0].text_color, goal: userChoices[0].goal, fillColor: userChoices[0].fill_color});
       $('#widget-form').prepend(theForm);
-      userChoices.forEach(x => {modInputs(1, x)});
+      modInputs(userChoices.length, userChoices);
+      $('#poll-choices').val(userChoices.length);
     }
   });
 };
 
-// Save or update the database by deleting all the choices first, and then adding the new ones
 $('#save-button').click(function(e) {
   e.preventDefault();
   console.log('You clicked SAVE');
-  if (userChoices.length > 0) deleteChoices();
+  deleteChoices(insertRows);
+});
+
+function insertRows() {
   var widgetText = $('#widget-title').val();
   var textColor = $('#widget-color').val();
   var fillColor = $('#fill-color').val();
@@ -85,7 +87,7 @@ $('#save-button').click(function(e) {
     var thisVal = totalChoices.eq(a).find('.base-value').val();
     insertChoice(userInfo.currentUser, widgetText, textColor, fillColor, goal, thisChoice, thisColor, thisVal);
   }
-});
+}
 
 // Clear button: Clear all fields, and delete the choices from the database
 // $('#clear-button').click(function() {

@@ -14,11 +14,11 @@ function insertChoice(paramName, paramWidgetText, paramTextColor, paramFillColor
   $.post('/choices', theChoice);
 }
 
-function deleteChoices() {
+function deleteChoices(callback) {
   $.ajax({
     url: `/choices/${userInfo.currentUser}`,
     method: 'DELETE'
-  })
+  }).then(callback());
 }
 
 // function getPageInfo() {
