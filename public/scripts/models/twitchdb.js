@@ -1,3 +1,5 @@
+var dynamicUser = document.location.href.split('=')[1];
+
 var options = {
   options:{
     debug: true
@@ -11,7 +13,7 @@ var options = {
   //   username: userInfo.currentUser,
   //   password: `oauth:${userInfo.OAuth}`
   // },
-  channels: [app.locals.dynamicUser]
+  channels: [dynamicUser]
 };
 
 var twitchClient = new tmi.client(options);
