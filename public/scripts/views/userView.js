@@ -30,6 +30,7 @@ twitchClient.on('cheer', function (channel, userstate, message) {
     if (message.includes(toRender[i].choice_text)) {
       var newVal = parseInt(toRender[i].value) + parseInt(userstate.bits);
       console.log(newVal);
+      updateChoice(newVal, i);
       $.ajax({
         url: `/choices/${dynamicUser}`,
         method: 'PUT',
@@ -38,11 +39,15 @@ twitchClient.on('cheer', function (channel, userstate, message) {
           choiceText: toRender[i].choice_text
         }
       })
-      .then(drawUserPage);
       break;
     }
   }
 });
+
+function updateChoice(newVal, index) {
+  newVal = Math.ceil(parseInt(newVal) / parseInt(toRender[0].goal) * 100);
+  var theChoice = $('.single-choice').eq(index).find('span').css('width', newVal);
+};
 
 function linkFont (userfont) {
   var linkElement = document.createElement('link');
