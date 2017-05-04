@@ -5,7 +5,7 @@
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <title>BitTools</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
-
+		<script src="https://use.fontawesome.com/fe52cfc17e.js"></script>
 		<script id="choice-template" type="text/x-handlebars-template">
 			<div class="choice-wrapper">
 				<input class="choice-input" type="text" placeholder="#choice" value="{{choiceText}}" required/>
@@ -39,7 +39,8 @@
 	<body>
 		<header>
 			<div id="nav-bar" class="overlay">
-				<a href="javascript:void(0)" class="closeButton" onClick="closeNavList()">Close</a>
+				<!-- <a href="javascript:void(0)" id="closeButton">Close</a> -->
+				<i id="hamburgerClose" class="fa fa-times-circle-o" aria-hidden="true"></i>
 			    <div class="nav-list">
 			      <ul id="nav-list">
 			        <li id="home"><a href="#">Home</a></li>
@@ -48,7 +49,7 @@
 			      </ul>
 					</div>
 				</div>
-				<a href="javascript:void(0)" class="openButton" onClick="openNavList()">Open</a>
+				<i id="hamburgerOpen" class="fa fa-bars" aria-hidden="true"></i>
 			    </section>
 		</header>
 		<main>
@@ -99,6 +100,7 @@
 		<script src="scripts/controllers/aboutController.js"></script>
 		<script src="scripts/views/widgetView.js"></script>
 		<script src="scripts/controllers/widgetController.js"></script>
+		<script src="scripts/views/navView.js"></script>
 		<script src="scripts/controllers/instructionsController.js"></script>
 		<script src="scripts/logout.js"></script>
 		<script type="text/javascript">

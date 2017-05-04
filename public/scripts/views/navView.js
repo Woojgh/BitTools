@@ -1,9 +1,9 @@
 'use strict';
 
-function openNavList() {
+$('#hamburgerOpen').on('click', function() {
   $('#nav-bar').width('100%');
-}
+});
 
-function closeNavList() {
+$('#hamburgerClose').on('click', function() {
   $('#nav-bar').width('0%');
-};
+});
