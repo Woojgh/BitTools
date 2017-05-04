@@ -16,7 +16,6 @@ function Profile (profilesDataObj) {
   this.img = profilesDataObj.img;
   this.name = profilesDataObj.name;
   this.bio = profilesDataObj.bio;
-  this.url = profilesDataObj.url;
 }
 
 Profile.prototype.toHtml = function() {
