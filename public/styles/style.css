@@ -24,6 +24,10 @@ body {
   vertical-align: middle;
 }
 
+.profile, .organize {
+  margin: 10px auto 0px auto;
+}
+
 .profile-left {
   float: left;
   display: inline-block;
@@ -49,7 +53,6 @@ body {
 
 .clearfix {
   clear: both;
-  margin-bottom: 20px;
 }
 
 .clearfix:last-child {
@@ -72,13 +75,17 @@ body {
 
 #instructions p {
   font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.howto {
+  font-weight: bold;
 }
 
 /*end instructions styles*/
 
 #widgets {
   display: none;
-  font-size: 0.9em;
 }
 
 #widgets > div {
@@ -88,6 +95,11 @@ body {
   border-radius: 10px;
   padding: 10px;
   font-weight: bold;
+  font-size: 0.9em;
+}
+
+#widgets > div div {
+  margin: 10px auto 0px auto;
 }
 
 button {
@@ -105,14 +117,77 @@ h1 {
   font-weight: bold;
 }
 
-label {
+/*label {
   width: 50%;
   margin-left: 0;
   margin-right: 0;
+}*/
+
+#titles span {
+  display: inline-block;
+  width: 10%;
+  margin-left: 5px;
+  text-align: center;
+}
+
+#titles span:first-child {
+  width: 60%;
+  margin-left: 0px;
+}
+
+#two-buttons {
+  margin: 10px auto 0px auto;
+  text-align: center;
+}
+
+#two-buttons button {
+  width: 100px;
+}
+
+#browser-source-url {
+  margin: 10px auto 0px auto;
+}
+
+#browser-source-url:first-child {
+  margin: 2px auto 0px auto;
+}
+
+
+#browser-source-url p {
+  margin-bottom: 3px;
+}
+
+#browser-source {
+  width: 80%;
+  margin: 0px;
+}
+
+#test-button {
+  width: 20%;
+  max-width: 100px;
+  margin: 0px;
+}
+
+#logout-div {
+  margin: 10px auto 0px auto;
+  text-align: center;
 }
 
 #logout {
-  margin: 10px auto 0px auto;
+  width: 100px;
+}
+
+.choice-wrapper {
+  font-size: 0px;
+}
+
+.choice-input {
+  width: 60%;
+}
+
+.choice-color, .base-value {
+  width: 10%;
+  margin-left: 5px;
 }
 
 /*nav-bar styles*/
