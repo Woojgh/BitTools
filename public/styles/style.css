@@ -70,11 +70,11 @@ button {
    color: #6441a5;
  }
 
-@media all and (max-width:500px) {
+/*@media all and (max-width:500px) {
   #nav-list {
     display: none;
   }
-}
+}*/
 /*end nav-bar styles*/
 
 /*login styles*/
