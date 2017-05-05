@@ -19,7 +19,7 @@
 		<script id="form-template" type="text/x-handlebars-template">
 			<h1>Setup Your Widget</h1>
 			<label>
-				Widget Text<input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required />
+				Widget Text <input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required />
 			</label>
 			<div>
 				Text color <input type="color" id="widget-color" value="{{textColor}}" />
@@ -28,9 +28,6 @@
 			<div>
 				<!-- Goal Amount<input type="number" id="goal" min="100" value="{{goal}}" required /> -->
 				<input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
-			</div>
-			<div>
-
 			</div>
 		</script>
 
@@ -49,11 +46,9 @@
 				</div>
 				<div id="nav-bar" class="overlay">
 			    <div class="nav-list">
-			      <ul>
-			        <li id="home"><a href="#widgets">Home</a></li>
-			        <li id="instructionsNav"><a href="#instructions">Instructions</a></li>
-			        <li id="aboutNav"><a href="#about">About</a></li>
-			      </ul>
+			      <a href="#widgets"><div id="home">Home</div></a>
+			      <a href="#instructions"><div id="instructionsNav">Instructions</div></a>
+			      <a href="#about"><div id="aboutNav">About</div></a>
 					</div>
 				</div>
 			</section>
@@ -70,18 +65,17 @@
 				<div>
 					<form action="#" id="widget-form">
 						<div>
-							How many poll choices?<input id="poll-choices" type="number" min="1" max="10" value="0">
+							How many poll choices? <input id="poll-choices" type="number" min="1" max="10" value="0">
 						</div>
 						<div id="choice-result"></div>
 						<div>
 							<button id="save-all">Save All</button>
-							<button id="clear-all">Clear All</button>
-
+							<button id="clear-all">Reset Form</button>
 						</div>
-						<div id="browser-source-url"><p>Browser Source Url:</p><input id="browser-source" type="text" readonly>
-							<button id="test-button">
-							Test
-							</button>
+						<div id="browser-source-url">
+							<p>Browser Source Url:</p>
+							<input id="browser-source" type="text" readonly>
+							<button id="test-button">Launch</button>
 						</div>
 						<div>
 							<button id="logout">Logout</button>
@@ -90,8 +84,7 @@
 				</div>
 			</section>
 			<section id="instructions">
-				<h3>BitTools</h3>
-				<h4>Instructions</h4>
+				<h4>How to Use</h4>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 			</section>
 			<section id="about">

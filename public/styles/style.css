@@ -78,19 +78,25 @@ h1 {
 
 .nav-list {
   position: absolute;
-  width: 100%;
-  text-align: left;
+  width: 40%;
+  margin: auto;
+  text-align: center;
 }
 
-.nav-list li {
+.nav-list div {
   display: inline-block;
   line-height: 40px;
   font-family: 'Amaranth', sans-serif;
   text-align: center;
+  width: 30%;
+  margin-right: 4%;
+}
+
+.nav-list div:last-child {
+  margin-right: 0px;
 }
 
 .overlay a {
-  padding-right: 10px;
   text-decoration: none;
   color: white;
 }

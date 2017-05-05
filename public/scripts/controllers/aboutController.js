@@ -1,8 +1,8 @@
 'use strict';
 
-$(document).ready(function() {
-  $('#about').hide();
-});
+// $(document).ready(function() {
+//   $('#about').hide();
+// });
 
 $('#aboutNav').on('click', function() {
   $('#about').show().siblings().hide();
