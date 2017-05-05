@@ -103,6 +103,12 @@ h1 {
   font-weight: bold;
 }
 
+label {
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 /*nav-bar styles*/
 
 #navBlock {

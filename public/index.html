@@ -8,26 +8,29 @@
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
 		<script src="https://use.fontawesome.com/fe52cfc17e.js"></script>
+
 		<script id="choice-template" type="text/x-handlebars-template">
 			<div class="choice-wrapper">
 				<input class="choice-input" type="text" placeholder="#choice" value="{{choiceText}}" required/>
-				<input class="choice-color" value="{{choiceColor}}" type="color">
+				Poll Color <input class="choice-color" value="{{choiceColor}}" type="color">
 				<input class="base-value" type="number" value="{{baseVal}}" required/>
 			</div>
 		</script>
 
 		<script id="form-template" type="text/x-handlebars-template">
 			<h1>Setup Your Widget</h1>
-			<label>
-				Widget Text <input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required />
-			</label>
 			<div>
-				Text color <input type="color" id="widget-color" value="{{textColor}}" />
-				Font <input type="text" id="google-font" value="{{googleFont}}"/>
+				<label>Poll Text <input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required /></label>
+				<label>Text Color <input type="color" id="widget-color" value="{{textColor}}" /></label>
 			</div>
 			<div>
-				<!-- Goal Amount<input type="number" id="goal" min="100" value="{{goal}}" required /> -->
-				<input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
+				<label>Choice Background Color <input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}"></label>
+				<label>Google Font <input type="text" id="google-font" value="{{googleFont}}"/></label>
+			</div>
+			<div>
+				<span>Enter Poll Option</span>
+				<span>Color</span>
+				<span>Value</span>
 			</div>
 		</script>
 
