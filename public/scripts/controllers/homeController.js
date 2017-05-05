@@ -1,5 +1,9 @@
 'use strict';
 
-$('#home').on('click', function() {
+// $('#home').on('click', function() {
+//   $('#widgets').show().siblings().hide();
+// });
+
+function homeLoad() {
   $('#widgets').show().siblings().hide();
-});
+}

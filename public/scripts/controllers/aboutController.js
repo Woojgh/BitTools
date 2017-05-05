@@ -4,10 +4,15 @@
 //   $('#about').hide();
 // });
 
-$('#aboutNav').on('click', function() {
+// $('#aboutNav').on('click', function() {
+//   $('#about').show().siblings().hide();
+//   print();
+// });
+
+function aboutLoad() {
   $('#about').show().siblings().hide();
   print();
-});
+}
 
 //about json
 var profileArray = [];

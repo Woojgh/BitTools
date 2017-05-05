@@ -52,6 +52,10 @@ body {
   margin-bottom: 20px;
 }
 
+.clearfix:last-child {
+  margin-bottom: 0px;
+}
+
 /*instructions section styles*/
 
 #instructions {
