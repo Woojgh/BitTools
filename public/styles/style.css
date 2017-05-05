@@ -115,6 +115,10 @@ label {
   margin: 10px auto 0px auto;
 }
 
+#browser-source-url p {
+  margin-bottom: 3px;
+}
+
 #browser-source {
   width: 80%;
   margin: 0px;
@@ -128,6 +132,7 @@ label {
 
 #logout-div {
   margin: 10px auto 0px auto;
+  text-align: center;
 }
 
 /*nav-bar styles*/
