@@ -47,6 +47,7 @@ button {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Amaranth', sans-serif;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 h1 {
@@ -68,7 +69,7 @@ h1 {
   z-index: 1;
   left: 0;
   top:0;
-  background-color: #6441a5;
+  background-color: #888;
 }
 
 .nav-list {
@@ -92,7 +93,7 @@ h1 {
 
 .overlay a {
   text-decoration: none;
-  color: white;
+  color: #000;
 }
 
  #hamburger {
@@ -102,7 +103,7 @@ h1 {
    line-height: 20px;
    font-size: 14px;
    text-align: center;
-   background-color: #888;
+   background-color: #444;
    color: #FFF;
    cursor: pointer;
    margin-right: 10px;
