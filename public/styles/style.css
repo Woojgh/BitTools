@@ -24,6 +24,10 @@ body {
   vertical-align: middle;
 }
 
+.profile, .organize {
+  margin: 10px auto 0px auto;
+}
+
 .profile-left {
   float: left;
   display: inline-block;
@@ -49,7 +53,6 @@ body {
 
 .clearfix {
   clear: both;
-  margin-bottom: 20px;
 }
 
 .clearfix:last-child {
@@ -94,7 +97,7 @@ body {
   font-size: 0.9em;
 }
 
-#widgets > div > div {
+#widgets > div div {
   margin: 10px auto 0px auto;
 }
 
