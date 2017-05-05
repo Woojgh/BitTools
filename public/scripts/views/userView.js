@@ -53,7 +53,7 @@ function updateChoice(newVal, i) {
     $('.single-choice').eq(a).find('span').css('width', `${reCalc}%`);
   };
   $('.single-choice').eq(i).css('border-color', toRender[i].choice_color);
-  $('.single-choice').eq(i).find('.inner-total').text(toRender[i].value);
+  $('.single-choice').eq(i).find('.mid-text').text(`${toRender[i].choice_text} (${toRender[i].value})`);
   $('.single-choice').eq(i).animate({
       borderWidth: '3px'
      }, 200)
