@@ -18,10 +18,11 @@ function drawUserPage() {
       oneChoice.textColor = toRender[a].text_color;
       oneChoice.choiceColor = toRender[a].choice_color;
       oneChoice.choiceText = toRender[a].choice_text;
+      oneChoice.bitTotal = toRender[a].value;
       var totalValue = toRender.map(x => x.value).reduce((acc, x) => acc + parseInt(x));
       oneChoice.value = Math.ceil(parseInt(toRender[a].value) / totalValue * 100);
-      oneChoice.bitTotal = toRender[a].value;
       $('#show-choices').append(renderChoice(oneChoice));
+      debugger;
     }
   });
 }
