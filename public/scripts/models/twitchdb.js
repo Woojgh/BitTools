@@ -13,8 +13,8 @@ var options = {
   //   username: userInfo.currentUser,
   //   password: `oauth:${userInfo.OAuth}`
   // },
-  channels: ['banzaibaby']
-  // channels: [dynamicUser]
+  // channels: ['wonderwez']
+  channels: [dynamicUser]
 };
 
 var twitchClient = new tmi.client(options);

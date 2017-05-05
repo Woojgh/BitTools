@@ -1,8 +1,5 @@
 'use strict';
 
-$(document).ready(function() {
-  $('#instructions').hide();
-});
-$('#instructionsNav').on('click', function() {
+function instLoad() {
   $('#instructions').show().siblings().hide();
-});
+}

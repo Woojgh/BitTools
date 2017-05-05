@@ -30,7 +30,7 @@ $('#poll-choices').on('change', function () {
 
 $('#test-button').on('click', function (e){
   e.preventDefault();
-  window.open(`https://bittoolscod301.herokuapp.com/user=${userInfo.currentUser}`,'pagename','resizable,height=400,width=260,screenX=1000,left=700,screenY=1000,top=350'); 
+  window.open(`https://bittoolscod301.herokuapp.com/user=${userInfo.currentUser}`,'pagename','resizable,height=400,width=260,screenX=1000,left=700,screenY=1000,top=350');
   return false;
 });
 
@@ -99,4 +99,8 @@ $('#clear-all').click(function(e) {
     totalChoices.eq(a).find('.choice-color').val('#ffffff');
     totalChoices.eq(a).find('.base-value').val(0);
   }
+});
+
+$('#hamburger').on('click', function() {
+  $('.overlay').toggle();
 });

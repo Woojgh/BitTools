@@ -18,6 +18,7 @@ function drawUserPage() {
       oneChoice.textColor = toRender[a].text_color;
       oneChoice.choiceColor = toRender[a].choice_color;
       oneChoice.choiceText = toRender[a].choice_text;
+      oneChoice.bitTotal = toRender[a].value;
       var totalValue = toRender.map(x => x.value).reduce((acc, x) => acc + parseInt(x));
       oneChoice.value = Math.ceil(parseInt(toRender[a].value) / totalValue * 100);
       $('#show-choices').append(renderChoice(oneChoice));
@@ -52,6 +53,7 @@ function updateChoice(newVal, i) {
     $('.single-choice').eq(a).find('span').css('width', `${reCalc}%`);
   };
   $('.single-choice').eq(i).css('border-color', toRender[i].choice_color);
+  $('.single-choice').eq(i).find('.mid-text').text(`${toRender[i].choice_text} (${toRender[i].value})`);
   $('.single-choice').eq(i).animate({
       borderWidth: '3px'
      }, 200)

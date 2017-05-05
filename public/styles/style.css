@@ -1,90 +1,187 @@
 * {
-  font-family: Arial, "Free Sans";
+  font-family: Arial, sans-serif;
 }
 
 body {
   background-color: #fff;
-  font-family: 'Roboto';
 }
 
 #about {
 	display:none;
-  text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
+}
+
+#about > div {
+  margin: 60px auto 0px auto;
+  width: 40%;
+  border: 3px solid #888;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 #about img {
   width: 200px;
-  border-radius: 50px;
+  border-radius: 10px;
+  vertical-align: middle;
 }
 
-#hamburgerOpen {
-  float:left;
-}
-
-#bitTools {
+.profile-left {
   float: left;
+  display: inline-block;
+  width: 200px;
+}
+
+.profile-right {
+  padding-left: 10px;
+  float: left;
+  width: calc(100% - 220px);
+  display: inline-block;
+}
+
+.profile-right h3 {
+  font-size: 2em;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.profile-right p {
+  font-size: 0.9em;
+}
+
+.clearfix {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.clearfix:last-child {
+  margin-bottom: 0px;
 }
 
 /*instructions section styles*/
 
 #instructions {
   display: none;
-  border-left: 5px solid rgba(155,190,90,0.8);
-  position: absolute;
-  align-content: center;
-  margin: 20%;
-  padding: 40px;
+}
+
+#instructions > div {
+  margin: 60px auto 0px auto;
+  width: 40%;
+  border: 3px solid #888;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#instructions p {
+  font-size: 0.9em;
 }
 
 /*end instructions styles*/
 
-#widget-form {
-  display:none;
+#widgets {
+  display: none;
+  font-size: 0.9em;
+}
+
+#widgets > div {
+  margin: 60px auto 0px auto;
+  width: 40%;
+  border: 3px solid #888;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
 }
 
 button {
   cursor: pointer;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amaranth', sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+label {
+  width: 50%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#logout {
+  margin: 10px auto 0px auto;
+}
+
 /*nav-bar styles*/
 
+#navBlock {
+  display: none;
+}
+
 .overlay {
-  height: 15%;
-  width: 0;
+  display: none;
+  height: 40px;
+  width: 100%;
   position: fixed;
   z-index: 1;
   left: 0;
   top:0;
-  background-color: #6441a5;
-  opacity: 0.9;
-  overflow-x: hidden;
-  transition: 0.5s;
+  background-color: #888;
 }
 
 .nav-list {
-  position: absolute;
-  width: 100%;
-  text-align: left;
+  width: 30%;
+  margin: auto;
+  text-align: center;
 }
 
-#home, #instructionsNav, #aboutNav {
+.nav-list div {
   display: inline-block;
+  line-height: 40px;
+  font-family: 'Amaranth', sans-serif;
+  text-align: center;
+  width: 30%;
+  margin-right: 4%;
+}
+
+.nav-list div:last-child {
+  margin-right: 0px;
 }
 
 .overlay a {
-  padding-right: 10px;
   text-decoration: none;
-  color: white;
-  /*transition: 0.3s;*/
+  color: #000;
 }
 
- #hamburger {
-   font-size: 2em;
-   float: left;
-   color: #6441a5;
+ #bittools-logo {
+   position: fixed;
+   z-index: 999;
+   left: 10px;
+   top: 5px;
+   height: 30px;
+   font-family: 'Amaranth', sans-serif;
+   font-size: 30px;
+   line-height: 30px;
  }
+
+  #hamburger {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #444;
+    color: #FFF;
+    cursor: pointer;
+    margin-top: -5px;
+    margin-right: 10px;
+    display: inline-block;
+  }
 
 /*@media all and (max-width:500px) {
   #nav-list {
@@ -96,4 +193,20 @@ button {
 /*login styles*/
 #login {
   display: none;
+}
+
+#login div {
+  margin: 60px auto 0px auto;
+  width: 40%;
+  text-align: center;
+}
+
+#login p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#login img {
+  margin: auto;
 }

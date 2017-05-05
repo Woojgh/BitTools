@@ -4,106 +4,118 @@
 	  <meta charset="utf-8">
 	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	  <title>BitTools</title>
+		<link rel="stylesheet" type="text/css" href="styles/reset.css">
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
-		<link rel="stylesheet" type="text/css" href="style/reset.css">
+		<link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
 		<script src="https://use.fontawesome.com/fe52cfc17e.js"></script>
+
 		<script id="choice-template" type="text/x-handlebars-template">
 			<div class="choice-wrapper">
 				<input class="choice-input" type="text" placeholder="#choice" value="{{choiceText}}" required/>
-				<input class="choice-color" value="{{choiceColor}}" type="color">
+				Poll Color <input class="choice-color" value="{{choiceColor}}" type="color">
 				<input class="base-value" type="number" value="{{baseVal}}" required/>
 			</div>
 		</script>
 
 		<script id="form-template" type="text/x-handlebars-template">
 			<h1>Setup Your Widget</h1>
-			<label>
-				Widget Text<input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required />
-			</label>
 			<div>
-				Text color <input type="color" id="widget-color" value="{{textColor}}" />
-				Font <input type="text" id="google-font" value="{{googleFont}}"/>
+				<label>Poll Text <input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required /></label>
+				<label>Text Color <input type="color" id="widget-color" value="{{textColor}}" /></label>
 			</div>
 			<div>
-				<!-- Goal Amount<input type="number" id="goal" min="100" value="{{goal}}" required /> -->
-				<input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}">
-			</div>
-			<div>
-
+				<label>Choice Background Color <input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}"></label>
+				<label>Google Font <input type="text" id="google-font" value="{{googleFont}}"/></label>
 			</div>
 		</script>
 
 		<script id="profile-template" type="text/x-handlebars-template">
-			<img src="{{img}}">
-			<h3>{{name}}</h3>
-			<p>{{bio}}</p>
+			<div class="profile">
+			<div class="profile-left">
+				<img src="{{img}}">
+			</div>
+			<div class="profile-right">
+				<h3>{{name}}</h3>
+				<p>{{bio}}</p>
+			</div>
+			</div>
+			<div class="clearfix"></div>
 		</script>
 	</head>
 
 	<body>
 		<header>
 			<section id="navBlock">
-			<div id="nav-bar" class="overlay">
+				<div id="bittools-logo">
+					<div id="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>BitTools
+				</div>
+				<div id="nav-bar" class="overlay">
 			    <div class="nav-list">
-			      <ul id="nav-list">
-			        <li id="home"><a href="#widgets">Home</a></li>
-			        <li id="instructionsNav"><a href="#instructions">Instructions</a></li>
-			        <li id="aboutNav"><a href="#about">About</a></li>
-			      </ul>
+			      <a href="/"><div id="home">Home</div></a>
+			      <a href="/instructions"><div id="instructionsNav">Instructions</div></a>
+			      <a href="/about"><div id="aboutNav">About</div></a>
 					</div>
 				</div>
 			</section>
-				<div id="bitTools"><i class="fa fa-bitbucket" aria-hidden="true"></i>BitTools</div>
-			<i id="hamburger" class="fa fa-bars" aria-hidden="true"></i>
 		</header>
 		<main>
-			<section id ="login">
+			<section id="login">
 				<div>
+					<h1>Welcome to BitTools</h1>
+					<p>Login with Twitch to continue</p>
 					<img src="https://ttv-api.s3.amazonaws.com/assets/connect_dark.png" class="twitch-connect" href="#" />
 				</div>
 			</section>
 			<section id="widgets" class="tab-content">
-				<form action="#" id="widget-form">
-					<div>
-						How many poll choices?<input id="poll-choices" type="number" min="1" max="10" value="0">
-					</div>
-					<div id="choice-result"></div>
-					<div>
-						<button id="save-all">Save All</button>
-						<button id="clear-all">Clear All</button>
-
-					</div>
-					<div id="browser-source-url"><p>Browser Source Url:</p><input id="browser-source" type="text" readonly>
-						<button id="test-button">
-						Test
-						</button>
-					</div>
-					<div>
-						<button id="logout">Logout</button>
-					</div>
-				</form>
+				<div>
+					<form action="#" id="widget-form">
+						<div>
+							How many poll choices? <input id="poll-choices" type="number" min="1" max="10" value="0">
+						</div>
+						<div>
+							<span>Enter Poll Option</span>
+							<span>Color</span>
+							<span>Value</span>
+						</div>
+						<div id="choice-result"></div>
+						<div>
+							<button id="save-all">Save All</button>
+							<button id="clear-all">Reset Form</button>
+						</div>
+						<div id="browser-source-url">
+							<p>Browser Source Url:</p>
+							<input id="browser-source" type="text" readonly>
+							<button id="test-button">Launch</button>
+						</div>
+						<div>
+							<button id="logout">Logout</button>
+						</div>
+					</form>
+				</div>
 			</section>
 			<section id="instructions">
-				<h3>BitTools</h3>
-				<h4>Instructions</h4>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				<div>
+					<h1>How to Use</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				</div>
 			</section>
 			<section id="about">
-				<h1>The BitTools Team</h1>
 				<div id="teamProfiles">
+					<h1>The BitTools Team</h1>
 				</div>
 			</section>
 		</main>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
 		<script src="vendors/tmi.min.js"></script>
 		<script src="scripts/widget.js"></script>
 		<script src="scripts/login.js"></script>
 		<script src="scripts/views/widgetView.js"></script>
-		<script src="scripts/views/navView.js"></script>
 		<script src="scripts/controllers/aboutController.js"></script>
 		<script src="scripts/controllers/instructionsController.js"></script>
 		<script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
 		<script type="text/javascript">
 			checkLogin();
 		</script>

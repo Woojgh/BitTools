@@ -1,13 +1,9 @@
 'use strict';
 
-$(document).ready(function() {
-  $('#about').hide();
-});
-
-$('#aboutNav').on('click', function() {
+function aboutLoad() {
   $('#about').show().siblings().hide();
   print();
-});
+}
 
 //about json
 var profileArray = [];
