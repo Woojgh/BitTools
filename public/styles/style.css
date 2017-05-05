@@ -135,9 +135,15 @@ h1 {
 #login div {
   margin: 60px auto 0px auto;
   width: 40%;
+  text-align: center;
 }
 
 #login p {
-  text-align: center;
   font-size: 1.5em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#login img {
+  margin: auto;
 }
