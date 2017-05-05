@@ -32,7 +32,7 @@ function checkLogin() {
         client_id: "pxic46d4dsydwhxvlh341kb7dgdnc6",
         client_secret: "c5kugf7f8ugkahsbpryccq6cocitxr",
         grant_type: "authorization_code",
-        redirect_uri: 'http://localhost:31337'
+        redirect_uri: 'https://bittoolscod301.herokuapp.com'
         // code: newValue
       },
       success: function(data) {
