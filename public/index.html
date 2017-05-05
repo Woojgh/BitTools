@@ -20,7 +20,7 @@
 		<script id="form-template" type="text/x-handlebars-template">
 			<h1>Setup Your Widget</h1>
 			<div>
-				<label>Poll Text <input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required /></label>
+				<label>Poll Title <input id="widget-title" placeholder="Widget title" type="text" value="{{widgetText}}" required /></label>
 				<label>Text Color <input type="color" id="widget-color" value="{{textColor}}" /></label>
 			</div>
 			<div class="organize">
@@ -96,17 +96,16 @@
 			<section id="instructions">
 				<div>
 					<h1>How to Use</h1>
-					<p><span class="howto"> Poll Text:</span>  This will display your poll question or title.</p>
+					<p><span class="howto"> Poll Title:</span>  This will display your poll question or title.</p>
 					<p><span class="howto"> Text Color:</span> This will change the color of all the text in your poll.</p>
-					<p><span class="howto"> Choice Background Color:</span> This choses what color will be the background or your choice bar.</p>
-					<p><span class="howto"> Google Font:</span> You can choose any Google font that you like as long as you copy the name from Google fonts.</p>
+					<p><span class="howto"> Choice Background Color:</span> This sets the background color for all the poll choices.</p>
+					<p><span class="howto"> Google Font:</span> You can choose any Google font that you like as long as you copy the name from Google Web Fonts.</p>
 					<p><span class="howto"> How Many Poll Choices:</span> This is for how many poll choices you would like.</p>
 					<p><span class="howto"> Poll Color:</span> This changes what your poll choice fill color will be.</p>
 					<p><span class="howto"> Save All:</span> This will save the state of your current poll.</p>
-					<p><span class="howto"> Reset Form:</span> This will clear the form inputs.</p>
-					<p><span class="howto"> Browser Source Url:</span> This is your dynamic Url that will apply as your browser source.</p>
+					<p><span class="howto"> Reset Form:</span> This will clear the form inputs. Reseting will not overwrite your save.</p>
+					<p><span class="howto"> Browser Source URL:</span> Enter this URL as your Browser Source in your broadcasting software.</p>
 					<p><span class="howto"> Launch:</span> This will launch a test of your poll in a separate green screen window.</p>
-					<p><span class="howto"> Logout:</span> This will log you out of our app and your witch authorization.</p>
 				</div>
 			</section>
 			<section id="about">
