@@ -27,11 +27,6 @@
 				<label>Choice Background Color <input id="fill-color" type="color" name="barfillcolor" value="{{fillColor}}"></label>
 				<label>Google Font <input type="text" id="google-font" value="{{googleFont}}"/></label>
 			</div>
-			<div>
-				<span>Enter Poll Option</span>
-				<span>Color</span>
-				<span>Value</span>
-			</div>
 		</script>
 
 		<script id="profile-template" type="text/x-handlebars-template">
@@ -76,6 +71,11 @@
 					<form action="#" id="widget-form">
 						<div>
 							How many poll choices? <input id="poll-choices" type="number" min="1" max="10" value="0">
+						</div>
+						<div>
+							<span>Enter Poll Option</span>
+							<span>Color</span>
+							<span>Value</span>
 						</div>
 						<div id="choice-result"></div>
 						<div>
