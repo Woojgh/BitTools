@@ -31,13 +31,13 @@ body {
 
 /*end instructions styles*/
 
+#widgets {
+  display: none;
+}
+
 #widgets > div {
   margin: 60px auto 0px auto;
   width: 40%;
-}
-
-#widget-form {
-  display:none;
 }
 
 button {
@@ -54,6 +54,10 @@ h1 {
 }
 
 /*nav-bar styles*/
+
+#navBlock {
+  display: none;
+}
 
 #nav-bar {
   display: none;
@@ -126,4 +130,14 @@ h1 {
 /*login styles*/
 #login {
   display: none;
+}
+
+#login div {
+  margin: 60px auto 0px auto;
+  width: 40%;
+}
+
+#login p {
+  text-align: center;
+  font-size: 1.5em;
 }
