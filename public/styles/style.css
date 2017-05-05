@@ -115,11 +115,12 @@ h1 {
     width: 30px;
     border-radius: 100%;
     line-height: 30px;
-    font-size: 14px;
+    font-size: 20px;
     text-align: center;
     background-color: #444;
     color: #FFF;
     cursor: pointer;
+    margin-top: -10px;
     margin-right: 10px;
     display: inline-block;
   }
