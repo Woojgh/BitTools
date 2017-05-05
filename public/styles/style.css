@@ -111,6 +111,15 @@ label {
   margin-right: 0;
 }
 
+#two-buttons {
+  margin: 10px auto 0px auto;
+  text-align: center;
+}
+
+#two-buttons button {
+  width: 100px;
+}
+
 #browser-source-url {
   margin: 10px auto 0px auto;
 }
@@ -133,6 +142,10 @@ label {
 #logout-div {
   margin: 10px auto 0px auto;
   text-align: center;
+}
+
+#logout {
+  width: 100px;
 }
 
 /*nav-bar styles*/
