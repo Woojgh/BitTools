@@ -23,8 +23,8 @@ function checkLogin() {
   } else {
     $('#widget-form').hide();
     $('#login').show();
-    var newValue = document.location.href.split("=")[1].split("&")[0];
-    var redirectURL = document.location.href.includes('localhost') ? 'localhost:31337' : 'https://bittoolscod301.herokuapp.com';
+    // var newValue = document.location.href.split("=")[1].split("&")[0];
+    var redirectURL = document.location.href.includes('localhost') ? 'http://localhost:31337' : 'https://bittoolscod301.herokuapp.com';
     $.ajax({
       url: "https://api.twitch.tv/kraken/oauth2/token",
       method: "POST",
@@ -32,8 +32,8 @@ function checkLogin() {
         client_id: "pxic46d4dsydwhxvlh341kb7dgdnc6",
         client_secret: "c5kugf7f8ugkahsbpryccq6cocitxr",
         grant_type: "authorization_code",
-        redirect_uri: redirectURL,
-        code: newValue
+        redirect_uri: redirectURL
+        // code: newValue
       },
       success: function(data) {
         userInfo.OAuth = data.access_token;
