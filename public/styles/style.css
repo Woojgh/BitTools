@@ -40,10 +40,16 @@ body {
 .profile-right h3 {
   font-size: 2em;
   margin-bottom: 5px;
+  text-align: left;
+}
+
+.profile-right p {
+  font-size: 0.8em;
 }
 
 .clearfix {
   clear: both;
+  margin-bottom: 20px;
 }
 
 /*instructions section styles*/
