@@ -9,13 +9,13 @@ body {
 h1 {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   text-align: center;
   text-shadow:
     -1px -1px 0 #FFF,
     1px -1px 0 #FFF,
     -1px 1px 0 #FFF,
-    1px 1px 0 #FFF;  
+    1px 1px 0 #FFF;
 }
 
 .single-choice {
@@ -24,7 +24,7 @@ h1 {
   border-width: 0px;
   padding: 0px;
   height: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   position: relative;
   width: 100%;
 }
