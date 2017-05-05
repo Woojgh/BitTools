@@ -117,10 +117,21 @@ h1 {
   font-weight: bold;
 }
 
-label {
+/*label {
   width: 50%;
   margin-left: 0;
   margin-right: 0;
+}*/
+
+#titles span {
+  display: inline-block;
+  width: 10%;
+  margin-left: 5px;
+  text-align: center;
+}
+
+#titles:first-child {
+  width: 60%;
 }
 
 #two-buttons {
@@ -165,13 +176,12 @@ label {
 }
 
 .choice-input {
-  width: 70%;
+  width: 60%;
 }
 
 .choice-color, .base-value {
-  width: 14%;
-  height: 21px;
-  padding: 0px;
+  width: 10%;
+  margin-left: 5px;
 }
 
 /*nav-bar styles*/
