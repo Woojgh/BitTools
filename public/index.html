@@ -32,9 +32,14 @@
 		</script>
 
 		<script id="profile-template" type="text/x-handlebars-template">
-			<img src="{{img}}">
-			<h3>{{name}}</h3>
-			<p>{{bio}}</p>
+			<div class="profile-left">
+				<img src="{{img}}">
+			</div>
+			<div class="profile-right">
+				<h3>{{name}}</h3>
+				<p>{{bio}}</p>
+			</div>
+			<div class="clearfix"></div>
 		</script>
 	</head>
 

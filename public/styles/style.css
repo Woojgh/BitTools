@@ -14,11 +14,32 @@ body {
   margin: 60px auto 0px auto;
   width: 40%;
   text-align: center;
+  border: 3px solid #888;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 #about img {
   width: 200px;
-  border-radius: 50px;
+  border-radius: 10px;
+  vertical-align: middle;
+}
+
+.profile-left {
+  float: left;
+}
+
+.profile-right {
+  padding-left: 10px;
+  float: left;
+}
+
+.profile-right h3 {
+  margin-bottom: 5px;
+}
+
+.clearfix {
+  clear: both;
 }
 
 /*instructions section styles*/
@@ -30,6 +51,9 @@ body {
 #instructions > div {
   margin: 60px auto 0px auto;
   width: 40%;
+  border: 3px solid #888;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 /*end instructions styles*/
