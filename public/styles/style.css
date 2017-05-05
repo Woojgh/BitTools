@@ -78,7 +78,6 @@ body {
 
 #widgets {
   display: none;
-  font-size: 0.9em;
 }
 
 #widgets > div {
@@ -88,6 +87,7 @@ body {
   border-radius: 10px;
   padding: 10px;
   font-weight: bold;
+  font-size: 0.9em;
 }
 
 button {
@@ -111,7 +111,22 @@ label {
   margin-right: 0;
 }
 
-#logout {
+#browser-source-url {
+  margin: 10px auto 0px auto;
+}
+
+#browser-source {
+  width: 80%;
+  margin: 0px;
+}
+
+#test-button {
+  width: 20%;
+  max-width: 100px;
+  margin: 0px;
+}
+
+#logout-div {
   margin: 10px auto 0px auto;
 }
 
