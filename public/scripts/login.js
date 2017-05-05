@@ -21,7 +21,7 @@ function checkLogin() {
     userInfo.userID = savedInfo.userID;
     renderWidget();
   } else {
-    $('main').hide();
+    $('#widgets').hide();
     $('#navBlock').hide();
     $('#login').show();
     var newValue = document.location.href.split("=")[1].split("&")[0];
