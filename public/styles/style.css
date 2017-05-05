@@ -44,7 +44,7 @@ body {
 }
 
 .profile-right p {
-  font-size: 1em;
+  font-size: 0.9em;
 }
 
 .clearfix {
@@ -64,6 +64,10 @@ body {
   border: 3px solid #888;
   border-radius: 10px;
   padding: 10px;
+}
+
+#instructions p {
+  font-size: 0.9em;
 }
 
 /*end instructions styles*/
@@ -137,7 +141,7 @@ h1 {
 }
 
  #bittools-logo {
-   position: absolute;
+   position: fixed;
    z-index: 999;
    left: 10px;
    top: 5px;
