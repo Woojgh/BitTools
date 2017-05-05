@@ -22,7 +22,6 @@ function drawUserPage() {
       var totalValue = toRender.map(x => x.value).reduce((acc, x) => acc + parseInt(x));
       oneChoice.value = Math.ceil(parseInt(toRender[a].value) / totalValue * 100);
       $('#show-choices').append(renderChoice(oneChoice));
-      debugger;
     }
   });
 }
