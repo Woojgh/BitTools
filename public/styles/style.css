@@ -99,30 +99,30 @@ h1 {
   color: #000;
 }
 
- #hamburger {
-   height: 30px;
-   width: 30px;
-   border-radius: 100%;
-   line-height: 30px;
-   font-size: 14px;
-   text-align: center;
-   background-color: #444;
-   color: #FFF;
-   cursor: pointer;
-   margin-right: 10px;
-   display: inline-block;
- }
-
  #bittools-logo {
    position: absolute;
    z-index: 999;
    left: 10px;
    top: 5px;
-   height: 20px;
+   height: 30px;
    font-family: 'Amaranth', sans-serif;
-   font-size: 20px;
-   line-height: 20px;
+   font-size: 30px;
+   line-height: 30px;
  }
+
+  #hamburger {
+    height: 30px;
+    width: 30px;
+    border-radius: 100%;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #444;
+    color: #FFF;
+    cursor: pointer;
+    margin-right: 10px;
+    display: inline-block;
+  }
 
 /*@media all and (max-width:500px) {
   #nav-list {
