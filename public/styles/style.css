@@ -41,6 +41,9 @@ body {
 #widgets > div {
   margin: 60px auto 0px auto;
   width: 40%;
+  border: 3px solid #888;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 button {
@@ -117,10 +120,11 @@ h1 {
     line-height: 30px;
     font-size: 20px;
     text-align: center;
+    vertical-align: middle;
     background-color: #444;
     color: #FFF;
     cursor: pointer;
-    margin-top: -10px;
+    margin-top: -5px;
     margin-right: 10px;
     display: inline-block;
   }
