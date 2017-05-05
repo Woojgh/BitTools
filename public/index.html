@@ -6,6 +6,7 @@
 	  <title>BitTools</title>
 		<link rel="stylesheet" type="text/css" href="styles/style.css">
 		<link rel="stylesheet" type="text/css" href="style/reset.css">
+		<link href="https://fonts.googleapis.com/css?family=Amaranth:700" rel="stylesheet">
 		<script src="https://use.fontawesome.com/fe52cfc17e.js"></script>
 		<script id="choice-template" type="text/x-handlebars-template">
 			<div class="choice-wrapper">
@@ -45,7 +46,7 @@
 			<section id="navBlock">
 			<div id="nav-bar" class="overlay">
 			    <div class="nav-list">
-			      <ul id="nav-list">
+			      <ul>
 			        <li id="home"><a href="#widgets">Home</a></li>
 			        <li id="instructionsNav"><a href="#instructions">Instructions</a></li>
 			        <li id="aboutNav"><a href="#about">About</a></li>
@@ -63,25 +64,27 @@
 				</div>
 			</section>
 			<section id="widgets" class="tab-content">
-				<form action="#" id="widget-form">
-					<div>
-						How many poll choices?<input id="poll-choices" type="number" min="1" max="10" value="0">
-					</div>
-					<div id="choice-result"></div>
-					<div>
-						<button id="save-all">Save All</button>
-						<button id="clear-all">Clear All</button>
+				<div>
+					<form action="#" id="widget-form">
+						<div>
+							How many poll choices?<input id="poll-choices" type="number" min="1" max="10" value="0">
+						</div>
+						<div id="choice-result"></div>
+						<div>
+							<button id="save-all">Save All</button>
+							<button id="clear-all">Clear All</button>
 
-					</div>
-					<div id="browser-source-url"><p>Browser Source Url:</p><input id="browser-source" type="text" readonly>
-						<button id="test-button">
-						Test
-						</button>
-					</div>
-					<div>
-						<button id="logout">Logout</button>
-					</div>
-				</form>
+						</div>
+						<div id="browser-source-url"><p>Browser Source Url:</p><input id="browser-source" type="text" readonly>
+							<button id="test-button">
+							Test
+							</button>
+						</div>
+						<div>
+							<button id="logout">Logout</button>
+						</div>
+					</form>
+				</div>
 			</section>
 			<section id="instructions">
 				<h3>BitTools</h3>
@@ -100,7 +103,6 @@
 		<script src="scripts/widget.js"></script>
 		<script src="scripts/login.js"></script>
 		<script src="scripts/views/widgetView.js"></script>
-		<script src="scripts/views/navView.js"></script>
 		<script src="scripts/controllers/aboutController.js"></script>
 		<script src="scripts/controllers/instructionsController.js"></script>
 		<script src="scripts/controllers/homeController.js"></script>

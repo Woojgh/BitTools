@@ -1,10 +1,9 @@
 * {
-  font-family: Arial, "Free Sans";
+  font-family: Arial, sans-serif;
 }
 
 body {
   background-color: #fff;
-  font-family: 'Roboto';
 }
 
 #about {
@@ -21,10 +20,6 @@ body {
 
 #hamburgerOpen {
   float:left;
-}
-
-#bitTools {
-  float: left;
 }
 
 /*instructions section styles*/
@@ -48,10 +43,18 @@ button {
   cursor: pointer;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Amaranth', sans-serif;
+}
+
 /*nav-bar styles*/
 
+.nav-bar {
+  display: none;
+}
+
 .overlay {
-  height: 15%;
+  height: 40px;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -69,21 +72,30 @@ button {
   text-align: left;
 }
 
-#home, #instructionsNav, #aboutNav {
+.nav-list li {
   display: inline-block;
+  line-height: 40px;
+  font-family: 'Amaranth', sans-serif;
+  text-align: center;
 }
 
 .overlay a {
   padding-right: 10px;
   text-decoration: none;
   color: white;
-  /*transition: 0.3s;*/
 }
 
  #hamburger {
-   font-size: 2em;
-   float: left;
+   position: absolute;
+   height: 20px;
+   width: 20px;
+   line-height: 20px;
+   font-size: 16px;
+   text-align: center;
    color: #6441a5;
+   z-index: 999;
+   left: 10px;
+   top: 10px;
  }
 
 /*@media all and (max-width:500px) {
