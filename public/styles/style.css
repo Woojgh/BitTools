@@ -59,11 +59,8 @@ h1 {
   display: none;
 }
 
-#nav-bar {
-  display: none;
-}
-
 .overlay {
+  display: none;
   height: 40px;
   width: 100%;
   position: fixed;
@@ -71,13 +68,9 @@ h1 {
   left: 0;
   top:0;
   background-color: #6441a5;
-  opacity: 0.9;
-  overflow-x: hidden;
-  transition: 0.5s;
 }
 
 .nav-list {
-  position: absolute;
   width: 40%;
   margin: auto;
   text-align: center;

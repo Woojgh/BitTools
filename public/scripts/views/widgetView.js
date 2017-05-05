@@ -102,5 +102,5 @@ $('#clear-all').click(function(e) {
 });
 
 $('#hamburger').on('click', function() {
-  $('#nav-bar').toggle();
+  $('.overlay').toggle();
 });
