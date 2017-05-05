@@ -130,7 +130,7 @@ h1 {
   text-align: center;
 }
 
-#titles:first-child {
+#titles span:first-child {
   width: 60%;
 }
 
