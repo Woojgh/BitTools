@@ -24,7 +24,7 @@ h1 {
   width: 100%;
 }
 
-.progress-bar {
+.single-choice span {
   display: block;
   margin: 0px;
   height: 100%;
@@ -42,8 +42,8 @@ h1 {
   width: 240px;
 }
 
-.inner-total {
+/*.inner-total {
   display: inline;
   padding: 0px;
   margin: 0px;
-}
+}*/
