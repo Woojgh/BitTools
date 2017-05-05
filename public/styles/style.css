@@ -8,9 +8,12 @@ body {
 
 #about {
 	display:none;
+}
+
+#about > div {
+  margin: 60px auto 0px auto;
+  width: 40%;
   text-align: center;
-  margin-left: 100px;
-  margin-right: 100px;
 }
 
 #about img {
@@ -22,11 +25,11 @@ body {
 
 #instructions {
   display: none;
-  border-left: 5px solid rgba(155,190,90,0.8);
-  position: absolute;
-  align-content: center;
-  margin: 20%;
-  padding: 40px;
+}
+
+#instructions > div {
+  margin: 60px auto 0px auto;
+  width: 40%;
 }
 
 /*end instructions styles*/
@@ -97,10 +100,10 @@ h1 {
 }
 
  #hamburger {
-   height: 20px;
-   width: 20px;
+   height: 30px;
+   width: 30px;
    border-radius: 100%;
-   line-height: 20px;
+   line-height: 30px;
    font-size: 14px;
    text-align: center;
    background-color: #444;
@@ -114,7 +117,7 @@ h1 {
    position: absolute;
    z-index: 999;
    left: 10px;
-   top: 10px;
+   top: 5px;
    height: 20px;
    font-family: 'Amaranth', sans-serif;
    font-size: 20px;
