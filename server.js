@@ -5,6 +5,7 @@ const fs = require('fs');
 const bodyParser = require('body-parser');
 const pg = require('pg');
 const tmi = require('tmi.js');
+const requestProxy = require('express-request-proxy');
 const app = express();
 const PORT = process.env.PORT || 31337;
 
