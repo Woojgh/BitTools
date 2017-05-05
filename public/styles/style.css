@@ -160,6 +160,18 @@ label {
   width: 100px;
 }
 
+.choice-wrapper {
+  font-size: 0px;
+}
+
+.choice-input {
+  width: 70%;
+}
+
+.choice-color, .base-value {
+  width: 15%;
+}
+
 /*nav-bar styles*/
 
 #navBlock {
