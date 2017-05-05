@@ -8,8 +8,8 @@ const tmi = require('tmi.js');
 const app = express();
 const PORT = process.env.PORT || 31337;
 
-// const conString = 'postgres://postgres:1234@localhost:5432/bittools';
-const conString = process.env.DATABASE_URL;
+const conString = 'postgres://postgres:1234@localhost:5432/bittools';
+// const conString = process.env.DATABASE_URL;
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
