@@ -9,7 +9,6 @@ const app = express();
 const PORT = process.env.PORT || 31337;
 
 const conString = process.env.DATABASE_URL;
-// const conString = 'postgres://zdiehlio:chimaera1@localhost:31337/day3'
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));

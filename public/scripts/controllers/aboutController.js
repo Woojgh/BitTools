@@ -23,7 +23,7 @@ Profile.prototype.toHtml = function() {
   return renderProfiles(this);
 };
 
-$.getJSON('/data/profiles.json', function(profiles) {
+$.getJSON('data/profiles.json', function(profiles) {
   profiles.forEach(function(profilesDataObject) {
     var profiles = new Profile(profilesDataObject);
     profileArray.push(profiles);
@@ -31,7 +31,9 @@ $.getJSON('/data/profiles.json', function(profiles) {
 });
 
 function print () {
+  if (profileArray.length > 0)
+    $('#teamProfiles').empty();
   profileArray.forEach(function(data) {
-    $('#about').append(data.toHtml());
+    $('#teamProfiles').append(data.toHtml());
   });
-}
+};
