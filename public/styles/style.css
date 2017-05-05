@@ -132,6 +132,7 @@ h1 {
 
 #titles span:first-child {
   width: 60%;
+  margin-left: 0px;
 }
 
 #two-buttons {
