@@ -1,6 +1,6 @@
 'use strict';
 
-page('/widgets', homeLoad);
+page('/', homeLoad);
 page('/instructions', instLoad);
 page('/about', aboutLoad);
 page();
