@@ -79,7 +79,6 @@ body {
 #widgets {
   display: none;
   font-size: 0.9em;
-  font-weight: bold;
 }
 
 #widgets > div {
@@ -88,6 +87,7 @@ body {
   border: 3px solid #888;
   border-radius: 10px;
   padding: 10px;
+  font-weight: bold;
 }
 
 button {
@@ -109,6 +109,10 @@ label {
   width: 50%;
   margin-left: 0;
   margin-right: 0;
+}
+
+#logout {
+  margin: 10px auto 0px auto;
 }
 
 /*nav-bar styles*/
