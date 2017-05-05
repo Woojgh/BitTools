@@ -74,6 +74,10 @@ body {
   font-size: 0.9em;
 }
 
+.howto {
+  font-weight: bold;
+}
+
 /*end instructions styles*/
 
 #widgets {
@@ -88,6 +92,10 @@ body {
   padding: 10px;
   font-weight: bold;
   font-size: 0.9em;
+}
+
+#widgets > div > div {
+  margin: 10px auto 0px auto;
 }
 
 button {
