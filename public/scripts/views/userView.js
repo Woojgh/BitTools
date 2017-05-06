@@ -9,7 +9,7 @@ function drawUserPage() {
     linkFont(toRender[0].google_font);
     var renderHeader = Handlebars.compile($('#widget-text-template').html());
     var renderChoice = Handlebars.compile($('#user-template').html());
-    var theForm = renderHeader({widgetText: toRender[0].widget_text, textColor: toRender[0].text_color, fillColor: toRender[0].fill_color);
+    var theForm = renderHeader({widgetText: toRender[0].widget_text, textColor: toRender[0].text_color, fillColor: toRender[0].fill_color});
     $('body').prepend(theForm);
 
     for (var a = 0; a < toRender.length; a++) {
