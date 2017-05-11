@@ -6,6 +6,9 @@ var userInfo = {
   userID: ''
 };
 
+var clientID;
+var clientSecret;
+
 $('.twitch-connect').click(function () {
   window.location='https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=pxic46d4dsydwhxvlh341kb7dgdnc6&redirect_uri=https://bittoolscod301.herokuapp.com&scope=user_read+channel_read';
 });
@@ -26,12 +29,20 @@ function checkLogin() {
     $('#login').show();
     var newValue = document.location.href.split("=")[1].split("&")[0];
     // var redirectURL = document.location.href.includes('localhost') ? 'http://localhost:31337' : 'https://bittoolscod301.herokuapp.com';
-    $.ajax({
+    $.get('/apps/bittoolscod301/config-vars',
+      headers: {
+        Accept: "application/vnd.heroku+json; version=3"
+      },
+      function (data) {
+        clientID = data.CLIENT_ID;
+        clientSecret = data.CLIENT_SECRET;
+    }).then(
+      $.ajax({
       url: "https://api.twitch.tv/kraken/oauth2/token",
       method: "POST",
       data: {
-        client_id: process.env.CLIENT_ID,
-        client_secret: process.env.CLIENT_SECRET,
+        client_id: clientID,
+        client_secret: clientSecret,
         grant_type: "authorization_code",
         redirect_uri: 'https://bittoolscod301.herokuapp.com',
         code: newValue
@@ -43,7 +54,7 @@ function checkLogin() {
           headers: {
             Accept: "application/vnd.twitchtv.v5+json",
             Authorization: `OAuth ${data.access_token}`,
-            "Client-ID": "pxic46d4dsydwhxvlh341kb7dgdnc6"
+            "Client-ID": clientID
           },
           success: function(data){
             userInfo.currentUser = data.token.user_name;
@@ -57,5 +68,6 @@ function checkLogin() {
         })
       }
     })
+    );
   }
 }
