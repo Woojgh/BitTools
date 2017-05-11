@@ -33,9 +33,10 @@ function checkLogin() {
       url: 'https://api.heroku.com/apps/bittoolscod301/config-vars',
       method: 'GET',
       headers: {
-        Accept: 'application/vnd.heroku+json; version=3'
+        Accept: "application/vnd.heroku+json; version=3"
       },
       success: function(data){
+        console.log(data);
         clientID = data.CLIENT_ID;
         clientSecret = data.CLIENT_SECRET;
       }
