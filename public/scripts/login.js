@@ -30,7 +30,7 @@ function checkLogin() {
     var newValue = document.location.href.split("=")[1].split("&")[0];
     // var redirectURL = document.location.href.includes('localhost') ? 'http://localhost:31337' : 'https://bittoolscod301.herokuapp.com';
     $.ajax({
-      url: '/apps/bittoolscod301/config-vars',
+      url: 'https://api.heroku.com/apps/bittoolscod301/config-vars',
       method: 'GET',
       headers: {
         Accept: 'application/vnd.heroku+json; version=3'
