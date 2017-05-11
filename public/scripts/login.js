@@ -30,8 +30,8 @@ function checkLogin() {
       url: "https://api.twitch.tv/kraken/oauth2/token",
       method: "POST",
       data: {
-        client_id: "pxic46d4dsydwhxvlh341kb7dgdnc6",
-        client_secret: "c5kugf7f8ugkahsbpryccq6cocitxr",
+        client_id: process.env.CLIENT_ID,
+        client_secret: process.env.CLIENT_SECRET,
         grant_type: "authorization_code",
         redirect_uri: 'https://bittoolscod301.herokuapp.com',
         code: newValue
