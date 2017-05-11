@@ -29,13 +29,16 @@ function checkLogin() {
     $('#login').show();
     var newValue = document.location.href.split("=")[1].split("&")[0];
     // var redirectURL = document.location.href.includes('localhost') ? 'http://localhost:31337' : 'https://bittoolscod301.herokuapp.com';
-    $.get('/apps/bittoolscod301/config-vars',
+    $.ajax({
+      url: '/apps/bittoolscod301/config-vars',
+      method: 'GET',
       headers: {
-        Accept: "application/vnd.heroku+json; version=3"
+        Accept: 'application/vnd.heroku+json; version=3'
       },
-      function (data) {
+      success: function(data){
         clientID = data.CLIENT_ID;
         clientSecret = data.CLIENT_SECRET;
+      }
     }).then(
       $.ajax({
       url: "https://api.twitch.tv/kraken/oauth2/token",
