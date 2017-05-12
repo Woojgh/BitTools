@@ -24,6 +24,10 @@ app.get('/', function(request, response){
 	response.sendFile('public/index.html', {root: '.'});
 });
 
+app.get('/login', function(request, response){
+	response.redirect('https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id=pxic46d4dsydwhxvlh341kb7dgdnc6&redirect_uri=https://bittoolscod301.herokuapp.com&scope=user_read+channel_read');
+});
+
 app.get('/user=*', function (request, response) {
 	response.sendFile('userpage.html', {root: './public'})
 });
