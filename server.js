@@ -32,6 +32,10 @@ app.get('/user=*', function (request, response) {
 	response.sendFile('userpage.html', {root: './public'})
 });
 
+app.get('/config-vars', function (request, response) {
+	response.send([process.env.CLIENT_ID, process.env.CLIENT_SECRET])
+});
+
 app.listen(PORT, function() {
 	console.log(`My server is running on port: ${PORT}`);
 });
